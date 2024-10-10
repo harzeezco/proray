@@ -9,7 +9,7 @@
 		"lint": "next lint",
 		"lint:fix": "npx eslint --fix .",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
-		"prepare": "husky",
+		"prepare": "husky && husky install",
 		"check-types": "tsc --project ./tsconfig.json  --pretty --noEmit",
 		"validate": "npm-run-all --parallel check-types && lint-staged && npm run lint"
 	},
@@ -48,7 +48,8 @@
 		"prettier": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.8",
 		"tailwindcss": "^3.4.1",
-		"typescript": "^5"
+		"typescript": "^5",
+		"husky": "^8.0.0"
 	},
 	"lint-staged": {
 		"*.+(ts|tsx)": [
