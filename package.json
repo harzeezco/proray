@@ -1,0 +1,59 @@
+{
+	"name": "proray",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"lint:fix": "npx eslint --fix .",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"prepare": "husky",
+		"check-types": "tsc --project ./tsconfig.json  --pretty --noEmit",
+		"validate": "npm-run-all --parallel check-types && lint-staged && npm run lint"
+	},
+	"dependencies": {
+		"next": "14.2.15",
+		"react": "^18",
+		"react-dom": "^18"
+	},
+	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"@types/react-slick": "^0.23.13",
+		"@typescript-eslint/eslint-plugin": "^7.18.0",
+		"@typescript-eslint/parser": "^7.18.0",
+		"autoprefixer": "^10.4.20",
+		"eslint": "^8",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-airbnb-typescript": "^18.0.0",
+		"eslint-config-next": "^14.2.15",
+		"eslint-plugin-folders": "^1.0.4",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-json": "^4.0.1",
+		"eslint-plugin-jsx-a11y": "^6.10.0",
+		"eslint-plugin-prettier": "^5.2.1",
+		"eslint-plugin-react-hooks": "^4.6.2",
+		"eslint-plugin-sort-destructure-keys": "^2.0.0",
+		"eslint-plugin-tailwindcss": "^3.17.5",
+		"eslint-plugin-typescript-sort-keys": "^3.3.0",
+		"eslint-plugin-unicorn": "^56.0.0",
+		"eslint-plugin-unused-imports": "^4.1.4",
+		"lint-staged": "^15.2.10",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8",
+		"prettier": "^3.3.3",
+		"prettier-plugin-tailwindcss": "^0.6.8",
+		"tailwindcss": "^3.4.1",
+		"typescript": "^5"
+	},
+	"lint-staged": {
+		"*.+(ts|tsx)": [
+			"npm run format",
+			"npm run lint:fix"
+		]
+	}
+}
