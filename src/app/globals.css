@@ -15,6 +15,7 @@ body {
   font-family: 'satoshi';
   color: white;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .img-deco::before {
@@ -26,6 +27,18 @@ body {
   height: 100px;
   background-color: #000000;
 }
+
+.showcase {
+  border-radius: 12px;
+  border: 5px solid rgba(255, 255, 255, 0);
+  background: rgba(7, 89, 120, 0.21);
+  backdrop-filter: blur(2.9000000953674316px);
+}
+.box1 {
+  box-shadow: 4px 14px 0px #212121;
+}
+.box2 {
+  box-shadow: -4px 14px 0px #212121;
 
 .about {
   height: 40vh;
