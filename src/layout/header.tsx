@@ -1,30 +1,49 @@
-"use client";
+'use client';
 
-import { usePathname } from "next/navigation"; // Import usePathname
-import AnimatedLink from "@/components/animated-text";
-import Image from "next/image";
-import Link from "next/link";
+// Import usePathname
+import AnimatedLink from '@/components/animated-text';
+import { cn } from '@/utils/cn';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const NAVLINKS = [
-  { title: "home", address: "/" },
-  { title: "about", address: "/about" }, // Assuming you will have a separate about page
-  { title: "our Products", address: "/products" }, // Assuming you will have a products page
+  { title: 'home', address: '/' },
+  { title: 'about', address: '/about' }, // Assuming you will have a separate about page
+  { title: 'our Products', address: '/products' }, // Assuming you will have a products page
+  { title: 'Contact', address: '/contacts' },
 ];
 
 const Header = () => {
   const pathname = usePathname(); // Get the current pathname
 
   return (
-    <header className="bg-blue-200 w-full">
-      <div className="container flex justify-between items-center py-4">
-        <Image src={"/icon/logo.png"} alt="logo" width={126} height={24} />
-        <ul className="flex gap-10">
-          {NAVLINKS.map(({ title, address }, i) => (
-            <Link href={address} key={i}>
+    <header
+      className={cn('w-full', pathname === '/' ? 'bg-blue-200' : '')}
+    >
+      <div className='container flex items-center justify-between py-4'>
+        <Link href='/'>
+          <Image
+            alt='logo'
+            height={24}
+            src={cn(
+              pathname === '/'
+                ? '/icon/logo.png'
+                : '/icon/logo-2.svg',
+            )}
+            width={126}
+          />
+        </Link>
+        <ul className='flex gap-10'>
+          {NAVLINKS.map(({ address, title }, i) => (
+            <Link key={i} href={address}>
               <li
-                className="capitalize"
+                className='capitalize'
                 style={{
-                  color: pathname === address ? "white" : "#89939E", // Change color based on current pathname
+                  color:
+                    pathname === address && pathname === '/'
+                      ? 'white'
+                      : '#89939E', // Change color based on current pathname
                 }}
               >
                 <AnimatedLink letters={title} />
@@ -34,8 +53,13 @@ const Header = () => {
         </ul>
 
         <AnimatedLink
-          letters="Get In Touch"
-          className="border-2 border-white rounded-lg px-8 py-3 hover:bg-primary transition-colors duration-300 hover:border-primary"
+          className={cn(
+            pathname === '/'
+              ? 'border-white hover:bg-primary hover:border-primary'
+              : 'hover:bg-primary hover:text-white border-primary hover:border-primary text-primary',
+            'transition-colors duration-300 border-[1.5px] px-8 py-3 rounded-lg',
+          )}
+          letters='Get In Touch'
         />
       </div>
     </header>
