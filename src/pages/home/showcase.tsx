@@ -1,3 +1,4 @@
+
 const ShowcaseSection = () => {
   return (
     <section className="w-full mt-20   bg-center bg-cover bg-no-repeat bg-banner-img">
@@ -31,7 +32,8 @@ const ShowcaseSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
+
 export default ShowcaseSection;

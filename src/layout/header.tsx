@@ -1,15 +1,17 @@
-"use client";
+'use client';
 
 import { usePathname } from "next/navigation";
 import AnimatedLink from "@/components/animated-text";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { cn } from '@/utils/cn';
 
 const NAVLINKS = [
-  { title: "home", address: "/" },
-  { title: "about", address: "/about" },
-  { title: "our Products", address: "/products" },
+  { title: 'home', address: '/' },
+  { title: 'about', address: '/about' }, // Assuming you will have a separate about page
+  { title: 'our Products', address: '/products' }, // Assuming you will have a products page
+  { title: 'Contact', address: '/contacts' },
 ];
 
 const Header = () => {
@@ -21,23 +23,32 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-blue-200 w-full">
-      <div className="container flex justify-between items-center py-4">
-        <Image src={"/icon/logo.png"} alt="logo" width={126} height={24} />
-
-        {/* Menu (for larger screens, displayed as flex) */}
-        <ul
-          className={`flex gap-10 md:relative md:flex-row max-md:fixed top-0 right-0 max-md:flex-col max-md:w-full max-md:h-screen max-md:bg-blue-200 z-50 max-md:justify-center max-md:pl-20 max-md:text-xl max-md:transition-transform max-md:duration-500 ${
-            opened ? "max-md:translate-x-0" : "max-md:translate-x-full"
-          }`}
-        >
-          {NAVLINKS.map(({ title, address }, i) => (
-            <Link href={address} key={i}>
+    <header
+      className={cn('w-full', pathname === '/' ? 'bg-blue-200' : '')}
+    >
+      <div className='container flex items-center justify-between py-4'>
+        <Link href='/'>
+          <Image
+            alt='logo'
+            height={24}
+            src={cn(
+              pathname === '/'
+                ? '/icon/logo.png'
+                : '/icon/logo-2.svg',
+            )}
+            width={126}
+          />
+        </Link>
+        <ul className='flex gap-10'>
+          {NAVLINKS.map(({ address, title }, i) => (
+            <Link key={i} href={address}>
               <li
-                onClick={() => setOpened(false)}
-                className="capitalize"
+                className='capitalize'
                 style={{
-                  color: pathname === address ? "white" : "#89939E", // Change color based on current pathname
+                  color:
+                    pathname === address && pathname === '/'
+                      ? 'white'
+                      : '#89939E', // Change color based on current pathname
                 }}
               >
                 <AnimatedLink letters={title} />
@@ -53,8 +64,13 @@ const Header = () => {
 
         {/* Get in touch link (hidden on smaller screens) */}
         <AnimatedLink
-          letters="Get In Touch"
-          className="border-2 border-white rounded-lg px-8 py-3 hover:bg-primary transition-colors duration-300 hover:border-primary max-md:hidden"
+          className={cn(
+            pathname === '/'
+              ? 'border-white hover:bg-primary hover:border-primary'
+              : 'hover:bg-primary hover:text-white border-primary hover:border-primary text-primary',
+            'transition-colors duration-300 border-[1.5px] px-8 py-3 rounded-lg',
+          )}
+          letters='Get In Touch'
         />
 
         {/* Animated Hamburger Menu Button */}
