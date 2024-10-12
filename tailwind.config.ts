@@ -52,6 +52,7 @@ const config: Config = {
 
       backgroundImage: {
         "banner-img": "url('/image/banner-image2.png')",
+        "banner-img2": "url('/image/detail.png')",
       },
     },
   },
