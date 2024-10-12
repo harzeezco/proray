@@ -115,7 +115,7 @@ const ServiceSection = () => (
       {/* Service 4 */}
       <article
         aria-labelledby='equipment-servicing'
-        className='   flex items-start justify-start gap-5 rounded-lg  bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-5
+        className='flex items-start justify-start gap-5 rounded-lg  bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-5
           min-[831px]:justify-center'
       >
         <Image
