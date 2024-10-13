@@ -23,7 +23,7 @@ const SERVICES = [
 
 const AboutSection = () => {
   return (
-    <section className="container pt-10 max-md:py-[70px]">
+    <section className="container  max-md:py-[20px]">
       <div className=" bg-white">
         <div className="container">
           <p className="text-gray-100 text-xl text-center">

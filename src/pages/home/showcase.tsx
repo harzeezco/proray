@@ -1,9 +1,9 @@
 const ShowcaseSection = () => {
   return (
     <section className="w-full mt-20   bg-center bg-cover bg-no-repeat bg-banner-img">
-      <div className="container pt-40 pb-20">
-        <div className="showcase p-10 shadow-2xl">
-          <h1 className="text-center text-balance text-3xl md:text-4xl lg:text-5xl pt-10">
+      <div className=" showcase  lg:pt-40 pt-20 pb-20">
+        <div className=" container">
+          <h1 className="text-center max-w-[900px] mx-auto text-4xl md:text-5xl lg:text-6xl pt-10">
             Leading the Way in Healthcare Safety and Efficiency
           </h1>
           <div className="grid grid-cols-3 max-md:grid-cols-1 items-center justify-center border-2 border-white border-opacity-50 rounded-lg px-8 py-4 mt-10 text-balance  gap-5 bg-blue-200">

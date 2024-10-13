@@ -10,8 +10,8 @@ const Hero = () => {
         <div className="bg-[#3d5f81] max-w-fit mb-1 px-8 py-1 rounded-lg text-white">
           100% Guaranty
         </div>
-        <div className="flex  max-[773px]:items-start items-center justify-between pb-[100px] max-[773px]:flex-col gap-x-5 max-sm:items-start max-sm:gap-5">
-          <h1 className="lg:text-6xl lg:max-w-[700px] md:max-w-[600px]  text-white md:text-5xl text-4xl  inline  font-satoshi">
+        <div className="flex  max-[773px]:items-start items-center justify-between pb-[100px] max-sm:pb-10 max-[773px]:flex-col gap-x-5 max-sm:items-start max-sm:gap-5">
+          <h1 className="lg:text-6xl lg:max-w-[700px] md:max-w-[600px]  text-hite md:text-5xl text-4xl  inline  font-satoshi max-[370px]:text-balance">
             Leading in{" "}
             <span className="bg-[#004e7f] inline px-2 rounded-lg border-[1px]  border-dashed border-primary text-primary ">
               Radiation
