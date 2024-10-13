@@ -1,6 +1,6 @@
 const Details = () => (
   <section className='bg-blue-400 px-10 py-14 text-3xl font-medium text-blue-250'>
-    <div className='container mx-auto max-w-[750px] text-center'>
+    <div className='container mx-auto max-w-[750px] text-center xl:max-w-[900px] 2xl:max-w-[1000px]'>
       <p>
         Pro-Ray Solutions Ltd is an independent supplier of innovative
         imaging equipment and associated healthcare products.

@@ -41,9 +41,9 @@ const Hero = () => (
     <div className='mt-14 flex'>
       <Image
         alt='a patient standing'
-        className='h-[450px] w-full'
+        className='h-[550px] w-full'
         height={388}
-        src='/image/product-hero.png'
+        src='/image/product.png'
         width={1200}
       />
     </div>

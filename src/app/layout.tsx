@@ -17,9 +17,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "proray || Empowering healthcare with radiation protection",
+  title: 'proray || Empowering healthcare with radiation protection',
   description:
-    "Empowering healthcare providers with industry-leading radiation protection solutions and a full range of high-quality medical equipment.",
+    'Empowering healthcare providers with industry-leading radiation protection solutions and a full range of high-quality medical equipment.',
 };
 
 export default function RootLayout({
@@ -28,9 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="no-visible-scrollbar" lang="en">
+    <html className='no-visible-scrollbar' lang='en'>
       <head>
-        <link rel="icon" href="/icon/logo.png" type="image/png " />
+        <link href='/icon/logo.png' rel='icon' type='image/png ' />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

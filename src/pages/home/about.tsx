@@ -38,9 +38,9 @@ const AboutSection = () => (
     <div className='flex  items-start justify-between gap-x-5 gap-y-20 pt-[120px] max-sm:flex-col'>
       <div>
         <h1 className='mb-5 text-3xl font-bold text-gray-200'>
-          About US .
+          About Us<span className='text-primary'>.</span>
         </h1>
-        <ul className='flex flex-wrap items-center justify-start  gap-2'>
+        <ul className='flex flex-wrap items-center justify-start gap-2  2xl:max-w-[550px]'>
           {SERVICES.map((service, i) => (
             <li
               key={i}
@@ -53,7 +53,7 @@ const AboutSection = () => (
       </div>
       <div className='max-w-[600px]'>
         <h1 className='mb-5 text-3xl font-bold text-gray-200'>
-          Proray Solutions.
+          Proray Solutions<span className='text-primary'>.</span>
         </h1>
         <p className=' text-balance text-lg text-gray-100'>
           Pro-Ray Solutions Ltd is an independent supplier of

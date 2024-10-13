@@ -12,7 +12,7 @@ const ServiceSection = () => (
       Our Key Services
     </h1>
 
-    <div className='grid max-w-5xl grid-cols-10 gap-6 p-6 max-[831px]:grid-cols-1'>
+    <div className='grid grid-cols-10 gap-6 p-6 max-[831px]:grid-cols-1'>
       {/* Service 1 */}
       <article
         aria-labelledby='hr-training'

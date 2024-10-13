@@ -33,7 +33,7 @@ const Hero = () => (
     </div>
     {/* Banner image section */}
 
-    <div className='relative mt-20 flex h-[50vh] w-screen items-center justify-center bg-white max-[500px]:h-[30vh] md:h-[80vh] lg:h-[90vh]'>
+    <div className='relative mt-20 flex h-[50vh] w-screen items-center justify-center bg-white max-[500px]:h-[30vh] md:h-[80vh] lg:h-[90vh] xl:h-[60vh] 2xl:h-[50vh]'>
       <div className='absolute top-0 mx-auto -translate-y-[20%]   max-md:container  max-md:shadow-2xl '>
         <Image
           alt='medical tool'

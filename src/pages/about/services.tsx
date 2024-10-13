@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const Services = () => (
-  <section className='container mt-24'>
+  <section className='container mb-28 mt-24'>
     <div className='flex flex-col items-center'>
       <button
         className='flex gap-3 rounded-[46px] border
@@ -27,7 +27,7 @@ const Services = () => (
         values
       </p>
     </div>
-    <div className='mt-5 grid max-w-6xl grid-cols-12 gap-6 p-6 text-gray-150 max-[831px]:grid-cols-1'>
+    <div className='mt-5 grid grid-cols-12 gap-6 p-6 text-gray-150 max-[831px]:grid-cols-1'>
       <article
         aria-labelledby='hr-training'
         className='space-y-5 rounded-lg bg-blue-400 p-5 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
@@ -35,7 +35,7 @@ const Services = () => (
         <Image
           alt='Human Resources icon'
           height={30}
-          src='/icon/radio-wave.svg'
+          src='/icon/chart.svg'
           width={30}
         />
         <div className='space-y-3'>
@@ -62,7 +62,7 @@ const Services = () => (
         <Image
           alt='Project Management icon'
           height={30}
-          src='/icon/security.svg'
+          src='/icon/chart.svg'
           width={30}
         />
         <div className='space-y-3'>
@@ -89,7 +89,7 @@ const Services = () => (
         <Image
           alt='Clinical Governance icon'
           height={30}
-          src='/icon/meter-wave.svg'
+          src='/icon/chart.svg'
           width={30}
         />
         <div className='space-y-3'>
@@ -117,7 +117,7 @@ const Services = () => (
         <Image
           alt='Equipment Servicing icon'
           height={30}
-          src='/icon/heart.svg'
+          src='/icon/chart.svg'
           width={30}
         />
         <div className='space-y-3'>
@@ -142,7 +142,7 @@ const Services = () => (
         <Image
           alt='Project Management icon'
           height={30}
-          src='/icon/security.svg'
+          src='/icon/chart.svg'
           width={30}
         />
         <div className='space-y-3'>
