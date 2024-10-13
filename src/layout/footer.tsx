@@ -1,3 +1,4 @@
+
 import AnimatedLink from "@/components/animated-text";
 
 import Image from "next/image";

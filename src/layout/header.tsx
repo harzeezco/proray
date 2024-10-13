@@ -1,10 +1,11 @@
-"use client";
+'use client';
 
 import { usePathname } from "next/navigation";
 import AnimatedLink from "@/components/animated-text";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { cn } from '@/utils/cn';
 import { motion } from "framer-motion";
 
 const NAVLINKS = [
@@ -12,7 +13,7 @@ const NAVLINKS = [
   { title: "about", address: "/about" },
   { title: "our Products", address: "/products" },
   { title: "contacts", address: "/contact" },
-];
+
 
 const Header = () => {
   const pathname = usePathname();
@@ -24,39 +25,31 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full  relative ${pathname == "/contact" ? "bg-white" : "bg-blue-200"}`}
+      className={cn('w-full', pathname === '/' ? 'bg-blue-200' : '')}
     >
-      <Image
-        src={"/image/stroke.webp"}
-        width={1000}
-        height={500}
-        alt="line stroke"
-        className="w-full absolute"
-      />
-
-      <div className="container flex justify-between  items-center py-4">
-        {pathname == "/contact" ? (
-          <Image src={"/icon/logo2.webp"} alt="logo" width={126} height={24} />
-        ) : (
-          <Image src={"/icon/logo.png"} alt="logo" width={126} height={24} />
-        )}
-        {/* Menu (for larger screens, displayed as flex) */}
-        <motion.ul
-          transition={{ staggerChildren: 0.2 }}
-          className={`flex gap-10 md:relative md:flex-row max-md:fixed top-0 right-0 max-md:flex-col max-md:w-full max-md:h-full max-md:bg-blue-200 z-50 max-md:justify-center max-md:pl-10 max-md:text-xl max-md:transition-transform max-md:duration-500 ${
-            opened ? "max-md:translate-x-0" : "max-md:translate-x-[120%]"
-          }`}
-        >
-          {NAVLINKS.map(({ title, address }, i) => (
-            <Link href={address} key={i}>
-              <motion.li
-                initial={{ translateX: 20, opacity: 0 }}
-                whileInView={{ translateX: 0, opacity: 1 }}
-                transition={{ ease: "easeOut", duration: 0.5 }}
-                onClick={() => setOpened(false)}
-                className="capitalize"
+      <div className='container flex items-center justify-between py-4'>
+        <Link href='/'>
+          <Image
+            alt='logo'
+            height={24}
+            src={cn(
+              pathname === '/'
+                ? '/icon/logo.png'
+                : '/icon/logo-2.svg',
+            )}
+            width={126}
+          />
+        </Link>
+        <ul className='flex gap-10'>
+          {NAVLINKS.map(({ address, title }, i) => (
+            <Link key={i} href={address}>
+              <li
+                className='capitalize'
                 style={{
-                  color: pathname === address ? "#0E90C2" : "#89939E", // Change color based on current pathname
+                  color:
+                    pathname === address && pathname === '/'
+                      ? 'white'
+                      : '#89939E', // Change color based on current pathname
                 }}
               >
                 <AnimatedLink letters={title} />
@@ -72,8 +65,13 @@ const Header = () => {
 
         {/* Get in touch link (hidden on smaller screens) */}
         <AnimatedLink
-          letters="Get In Touch"
-          className={` border-[1px] rounded-lg px-8 py-4 hover:bg-primary transition-colors duration-300 hover:border-primary max-md:hidden   max-w-fit  ${pathname == "/contact" ? "border-primary hover:text-white text-primary" : "border-white text-white "}`}
+          className={cn(
+            pathname === '/'
+              ? 'border-white hover:bg-primary hover:border-primary'
+              : 'hover:bg-primary hover:text-white border-primary hover:border-primary text-primary',
+            'transition-colors duration-300 border-[1.5px] px-8 py-3 rounded-lg',
+          )}
+          letters='Get In Touch'
         />
 
         {/* Animated Hamburger Menu Button */}
