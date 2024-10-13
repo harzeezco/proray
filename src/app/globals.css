@@ -18,15 +18,6 @@ body {
   scroll-behavior: smooth;
 }
 
-.img-deco::before {
-  content: 'dfsanjkdasndjkasnkjnkjadskjfjkasbfkbdfsaaskj';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  background-color: #000000;
-}
 
 .showcase {
   border-radius: 12px;

@@ -20,7 +20,7 @@ const SERVICES = [
 ];
 
 const AboutSection = () => (
-  <section className='container pt-10 max-md:py-[70px]'>
+  <section className='container pt-10 max-md:py-[20px]'>
     <div className=' bg-white'>
       <div className='container'>
         <p className='text-center text-xl text-gray-100'>

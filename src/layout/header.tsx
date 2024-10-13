@@ -6,13 +6,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from '@/utils/cn';
+import { motion } from "framer-motion";
 
 const NAVLINKS = [
-  { title: 'home', address: '/' },
-  { title: 'about', address: '/about' }, // Assuming you will have a separate about page
-  { title: 'our Products', address: '/products' }, // Assuming you will have a products page
-  { title: 'Contact', address: '/contacts' },
-];
+  { title: "home", address: "/" },
+  { title: "about", address: "/about" },
+  { title: "our Products", address: "/products" },
+  { title: "contacts", address: "/contact" },
+
 
 const Header = () => {
   const pathname = usePathname();
@@ -52,15 +53,15 @@ const Header = () => {
                 }}
               >
                 <AnimatedLink letters={title} />
-              </li>
+              </motion.li>
             </Link>
           ))}
 
           <AnimatedLink
             letters="Get In Touch"
-            className=" border-white rounded-lg px-8 py-3 hover:bg-primary transition-colors duration-300 hover:border-primary md:hidden  bg-primary max-w-fit"
+            className=" border-white rounded-md px-8 py-4 hover:bg-primary transition-colors duration-300 hover:border-primary md:hidden  bg-primary max-w-fit"
           />
-        </ul>
+        </motion.ul>
 
         {/* Get in touch link (hidden on smaller screens) */}
         <AnimatedLink

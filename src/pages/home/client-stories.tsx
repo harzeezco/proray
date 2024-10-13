@@ -16,7 +16,7 @@ const ClientStories = () => {
         What people say about us
       </h1>
 
-      <div className="md:mt-14 w-full overflow-x-hidden py-10">
+      <div className="md:mt-14 w-full overflow-x-hidden py-10 ">
         <div className="relative mx-auto max-w-5xl">
           <Slider {...settings} ref={sliderRef} aria-live="polite">
             {TESTIMONIALS.map((testimonial) => (
