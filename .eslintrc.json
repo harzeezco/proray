@@ -33,6 +33,7 @@
         "react/no-array-index-key": "off",
         "linebreak-style": 0,
         "no-continue": "off",
+        "jsx-a11y/label-has-associated-control": "off",
         "consistent-return": "off",
         "prefer-arrow-callback": 2,
         "no-confusing-arrow": "off",

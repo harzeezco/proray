@@ -1,253 +1,282 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import AnimatedLink from "@/components/animated-text";
-import { motion } from "framer-motion";
+'use client';
 
-const ContactSection = () => {
-  return (
-    <section className="relative   py-16 px-8">
-      <div className="container ">
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="lg:text-6xl md:text-5xl text-4xl text-gray-200 text-start  font-bold  lg:max-w-[650px]   md:max-w-[500px] max-w-[400px]">
-            Contact our team to find out more
-          </h2>
+import AnimatedLink from '@/components/animated-text';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+
+const ContactSection = () => (
+  <section className='relative   px-8 py-16'>
+    <div className='container '>
+      {/* Heading */}
+      <div className='mb-12 text-center'>
+        <h2 className='max-w-[400px] text-start text-4xl font-bold text-gray-200  md:max-w-[500px]  md:text-5xl   lg:max-w-[650px] lg:text-6xl'>
+          Contact our team to find out more
+        </h2>
+      </div>
+
+      <div className='flex justify-between max-md:flex-col md:items-center'>
+        <div className=' relative'>
+          {/* Map Image */}
+          <Image
+            alt='World Map'
+            className='  max-w-[800px] rounded-md'
+            height={500}
+            layout='responsive'
+            src='/image/Location.webp'
+            width={700}
+          />
         </div>
 
-        <div className="flex md:items-center justify-between max-md:flex-col">
-          <div className=" relative">
-            {/* Map Image */}
-            <Image
-              src="/image/Location.webp"
-              alt="World Map"
-              width={700}
-              height={500}
-              layout="responsive"
-              className="  rounded-md max-w-[800px]"
-            />
-          </div>
+        {/* Contact Info */}
+        <div className='flex max-w-[232px] flex-col justify-center '>
+          {/* Support */}
+          <div>
+            <motion.h3
+              className='mb-1 text-xl  font-bold text-gray-200 lg:text-2xl'
+              initial={{ opacity: 0, translateX: 25 }}
+              transition={{ ease: 'easeOut', duration: 0.5 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+            >
+              Support
+            </motion.h3>
+            <motion.p
+              className='max-w-[170px] text-gray-100 '
+              initial={{ opacity: 0, translateX: 25 }}
+              transition={{
+                ease: 'easeOut',
+                duration: 0.5,
+                delay: 0.2,
+              }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+            >
+              Our friendly team is here to help.
+            </motion.p>
 
-          {/* Contact Info */}
-          <div className="flex flex-col justify-center max-w-[232px] ">
-            {/* Support */}
-            <div>
-              <motion.h3
-                initial={{ opacity: 0, translateX: 25 }}
-                whileInView={{ opacity: 1, translateX: 0 }}
-                transition={{ ease: "easeOut", duration: 0.5 }}
-                viewport={{ once: true }}
-                className="lg:text-2xl text-xl  mb-1 text-gray-200 font-bold"
-              >
-                Support
-              </motion.h3>
+            <Link
+              className='text-gray-200 underline  hover:text-primary'
+              href='mailto:support@proraysolutions.com'
+            >
               <motion.p
                 initial={{ opacity: 0, translateX: 25 }}
-                whileInView={{ opacity: 1, translateX: 0 }}
-                transition={{ ease: "easeOut", duration: 0.5, delay: 0.2 }}
+                transition={{
+                  ease: 'easeOut',
+                  duration: 0.5,
+                  delay: 0.4,
+                }}
                 viewport={{ once: true }}
-                className="text-gray-100 max-w-[170px] "
+                whileInView={{ opacity: 1, translateX: 0 }}
               >
-                Our friendly team is here to help.
+                support@proraysolutions.com
               </motion.p>
+            </Link>
+          </div>
 
+          {/* Sales */}
+          <div>
+            <motion.h3
+              className='mb-1 mt-5  text-xl font-bold text-gray-200 lg:text-2xl'
+              initial={{ opacity: 0, translateX: 25 }}
+              transition={{
+                ease: 'easeOut',
+                duration: 0.5,
+                delay: 0.6,
+              }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+            >
+              Sales
+            </motion.h3>
+            <motion.p
+              className='max-w-[170px] text-gray-100'
+              initial={{ opacity: 0, translateX: 25 }}
+              transition={{
+                ease: 'easeOut',
+                duration: 0.5,
+                delay: 0.8,
+              }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+            >
+              Questions or queries? Get in touch!
+            </motion.p>
+            <div className='mt-2 flex items-center'>
               <Link
-                href="mailto:support@proraysolutions.com"
-                className="hover:text-primary underline  text-gray-200"
+                className='text-gray-200 underline  hover:text-primary'
+                href='mailto:sales@proraysolutions.com'
               >
                 <motion.p
                   initial={{ opacity: 0, translateX: 25 }}
-                  whileInView={{ opacity: 1, translateX: 0 }}
-                  transition={{ ease: "easeOut", duration: 0.5, delay: 0.4 }}
+                  transition={{
+                    ease: 'easeOut',
+                    duration: 0.5,
+                    delay: 1,
+                  }}
                   viewport={{ once: true }}
+                  whileInView={{ opacity: 1, translateX: 0 }}
                 >
-                  support@proraysolutions.com
+                  sales@proraysolutions.com
                 </motion.p>
               </Link>
             </div>
-
-            {/* Sales */}
-            <div>
-              <motion.h3
-                initial={{ opacity: 0, translateX: 25 }}
-                whileInView={{ opacity: 1, translateX: 0 }}
-                transition={{ ease: "easeOut", duration: 0.5, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="lg:text-2xl text-xl  mb-1 mt-5 text-gray-200 font-bold"
-              >
-                Sales
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0, translateX: 25 }}
-                whileInView={{ opacity: 1, translateX: 0 }}
-                transition={{ ease: "easeOut", duration: 0.5, delay: 0.8 }}
-                viewport={{ once: true }}
-                className="text-gray-100 max-w-[170px]"
-              >
-                Questions or queries? Get in touch!
-              </motion.p>
-              <div className="flex items-center mt-2">
-                <Link
-                  href="mailto:sales@proraysolutions.com"
-                  className="hover:text-primary underline  text-gray-200"
-                >
-                  <motion.p
-                    initial={{ opacity: 0, translateX: 25 }}
-                    whileInView={{ opacity: 1, translateX: 0 }}
-                    transition={{ ease: "easeOut", duration: 0.5, delay: 1 }}
-                    viewport={{ once: true }}
-                  >
-                    sales@proraysolutions.com
-                  </motion.p>
-                </Link>
-              </div>
-            </div>
-
-            {/* Phone */}
-            <div>
-              <motion.h3
-                initial={{ opacity: 0, translateX: 25 }}
-                whileInView={{ opacity: 1, translateX: 0 }}
-                transition={{ ease: "easeOut", duration: 0.5, delay: 1.2 }}
-                viewport={{ once: true }}
-                className="lg:text-2xl text-xl  mb-1 mt-5 text-gray-200 font-bold"
-              >
-                Phone
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0, translateX: 25 }}
-                whileInView={{ opacity: 1, translateX: 0 }}
-                transition={{ ease: "easeOut", duration: 0.5, delay: 1.4 }}
-                viewport={{ once: true }}
-                className="text-gray-100 max-w-[170px]"
-              >
-                Mon-Fri from 8am to 5pm.
-              </motion.p>
-              <div className="flex items-center mt-2">
-                <Link
-                  href="tel:+2348026100080"
-                  className="hover:text-primary border-b-[1px] pb-1  text-gray-200"
-                >
-                  <AnimatedLink
-                    letters="+234 (080) 2 610 0080"
-                    className="underline"
-                  />
-                </Link>
-              </div>
-            </div>
           </div>
-        </div>
 
-        <div className="flex  items-center mt-20 justify-between max-md:items-start max-md:flex-col">
+          {/* Phone */}
           <div>
-            <h3 className="text-gray-200 text-3xl font-bold pb-3 ">50+</h3>
-            <p className="text-gray-100 max-w-[300px] text-lg max-md:mb-5 ">
-              Some big hospitals that we work with, and trust us very much
-            </p>
-          </div>
-          <div className="max-md:-ml-5">
-            <Image
-              src={"/image/logos.png"}
-              height={200}
-              width={700}
-              alt="google amazon airbnb logos"
-            />
-          </div>
-        </div>
-
-        {/* Contacts Tab */}
-        <div className="grid mt-[120px]  lg:grid-cols-2 items-center lg:justify-between lg:mb-40 mb-20">
-          <div className="border-l-[1px] max-lg:border-[1px] border-y-[1px] px-16 max-[500px]:px-5 pt-20 pb-16 h-full border-zinc-300">
-            <h3 className="text-3xl max-sm:text-2xl max-w-[500px] text-gray-200 font-bold">
-              Let’s Level Up Your Healthcare Solutions
-            </h3>
-            <p className="text-gray-100 pt-2">
-              You can reach us anytime{" "}
-              <a
-                className="text-primary hover:underline"
-                href="mailto:hello@proraysolutions.com"
+            <motion.h3
+              className='mb-1 mt-5  text-xl font-bold text-gray-200 lg:text-2xl'
+              initial={{ opacity: 0, translateX: 25 }}
+              transition={{
+                ease: 'easeOut',
+                duration: 0.5,
+                delay: 1.2,
+              }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+            >
+              Phone
+            </motion.h3>
+            <motion.p
+              className='max-w-[170px] text-gray-100'
+              initial={{ opacity: 0, translateX: 25 }}
+              transition={{
+                ease: 'easeOut',
+                duration: 0.5,
+                delay: 1.4,
+              }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+            >
+              Mon-Fri from 8am to 5pm.
+            </motion.p>
+            <div className='mt-2 flex items-center'>
+              <Link
+                className='border-b pb-1 text-gray-200  hover:text-primary'
+                href='tel:+2348026100080'
               >
-                hello@proraysolutions.com
-              </a>
-            </p>
-
-            {/* form */}
-            <form action="">
-              <div className="grid grid-cols-2 max-sm:grid-cols-1  gap-4  items-center justify-between mt-5 ">
-                <div className="flex flex-col items-start justify-start ">
-                  <label
-                    htmlFor="first-name "
-                    className="text-gray-200 lg:text-lg font-bold pb-2"
-                  >
-                    First name
-                  </label>
-                  <input
-                    type="text"
-                    id="first-name"
-                    placeholder="First name"
-                    className="border-[1px] outline-none px-2 py-2  rounded-md text-gray-200 border-zinc-300 w-full"
-                  />
-                </div>
-                <div className="flex flex-col items-start justify-start">
-                  <label
-                    htmlFor="first-name "
-                    className="text-gray-200 lg:text-lg font-bold pb-2"
-                  >
-                    Last name
-                  </label>
-                  <input
-                    type="text"
-                    id="first-name"
-                    placeholder="First name"
-                    className="border-[1px] outline-none px-2 py-2  rounded-md text-gray-200 border-zinc-300 w-full"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col mt-5">
-                <label
-                  htmlFor="email"
-                  className="text-gray-200 lg:text-lg font-bold pb-2"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="you@company.com"
-                  className=" border-[1px] outline-none border-zinc-300 p-2 text-gray-200 rounded-md "
+                <AnimatedLink
+                  className='underline'
+                  letters='+234 (080) 2 610 0080'
                 />
-              </div>
-              <div className="flex flex-col  mt-5">
-                <label
-                  htmlFor="message"
-                  className="text-gray-200 lg:text-lg font-bold pb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  placeholder="Leave us a message..."
-                  className=" border-[1px] text-gray-200 outline-none  border-zinc-300 p-2 rounded-md "
-                ></textarea>
-              </div>
-            </form>
-          </div>
-          <div className=" h-full max-lg:hidden">
-            <Image
-              src={"/image/proray.webp"}
-              height={200}
-              width={400}
-              alt="medical worker  "
-              className="w-full bg-contain h-full"
-            />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+
+      <div className='mt-20  flex items-center justify-between max-md:flex-col max-md:items-start'>
+        <div>
+          <h3 className='pb-3 text-3xl font-bold text-gray-200 '>
+            50+
+          </h3>
+          <p className='max-w-[300px] text-lg text-gray-100 max-md:mb-5 '>
+            Some big hospitals that we work with, and trust us very
+            much
+          </p>
+        </div>
+        <div className='max-md:-ml-5'>
+          <Image
+            alt='google amazon airbnb logos'
+            height={200}
+            src='/image/logos.png'
+            width={700}
+          />
+        </div>
+      </div>
+
+      {/* Contacts Tab */}
+      <div className='mb-20 mt-[120px]  grid items-center lg:mb-40 lg:grid-cols-2 lg:justify-between'>
+        <div className='h-full border-y border-l border-zinc-300 px-16 pb-16 pt-20 max-lg:border max-[500px]:px-5'>
+          <h3 className='max-w-[500px] text-3xl font-bold text-gray-200 max-sm:text-2xl'>
+            Let’s Level Up Your Healthcare Solutions
+          </h3>
+          <p className='pt-2 text-gray-100'>
+            You can reach us anytime{' '}
+            <a
+              className='text-primary hover:underline'
+              href='mailto:hello@proraysolutions.com'
+            >
+              hello@proraysolutions.com
+            </a>
+          </p>
+
+          {/* form */}
+          <form action=''>
+            <div className='mt-5 grid grid-cols-2  items-center  justify-between gap-4 max-sm:grid-cols-1 '>
+              <div className='flex flex-col items-start justify-start '>
+                <label
+                  className='pb-2 font-bold text-gray-200 lg:text-lg'
+                  htmlFor='first-name '
+                >
+                  First name
+                </label>
+                <input
+                  className='w-full rounded-md border border-zinc-300  p-2 text-gray-200 outline-none'
+                  id='first-name'
+                  placeholder='First name'
+                  type='text'
+                />
+              </div>
+              <div className='flex flex-col items-start justify-start'>
+                <label
+                  className='pb-2 font-bold text-gray-200 lg:text-lg'
+                  htmlFor='first-name '
+                >
+                  Last name
+                </label>
+                <input
+                  className='w-full rounded-md border border-zinc-300  p-2 text-gray-200 outline-none'
+                  id='first-name'
+                  placeholder='First name'
+                  type='text'
+                />
+              </div>
+            </div>
+            <div className='mt-5 flex flex-col'>
+              <label
+                className='pb-2 font-bold text-gray-200 lg:text-lg'
+                htmlFor='email'
+              >
+                Email
+              </label>
+              <input
+                className=' rounded-md border border-zinc-300 p-2 text-gray-200 outline-none '
+                id='email'
+                name='email'
+                placeholder='you@company.com'
+                type='email'
+              />
+            </div>
+            <div className='mt-5 flex  flex-col'>
+              <label
+                className='pb-2 font-bold text-gray-200 lg:text-lg'
+                htmlFor='message'
+              >
+                Message
+              </label>
+              <textarea
+                className=' rounded-md border border-zinc-300  p-2 text-gray-200 outline-none '
+                id='message'
+                name='message'
+                placeholder='Leave us a message...'
+              />
+            </div>
+          </form>
+        </div>
+        <div className=' h-full max-lg:hidden'>
+          <Image
+            alt='medical worker  '
+            className='size-full bg-contain'
+            height={200}
+            src='/image/proray.webp'
+            width={400}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 export default ContactSection;
