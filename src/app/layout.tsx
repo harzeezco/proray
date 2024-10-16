@@ -1,3 +1,4 @@
+import LeniScroll from '@/components/lenis';
 import Footer from '@/layout/footer';
 import Header from '@/layout/header';
 import type { Metadata } from 'next';
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <LeniScroll />
         <Header />
         {children}
         <Footer />
