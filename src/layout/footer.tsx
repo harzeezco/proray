@@ -71,13 +71,10 @@ const Footer = () => (
           placeholder='Your Email'
           type='email'
         />
-        <button
-          className='group mt-4 flex w-full items-center justify-center rounded-md bg-primary py-3 text-white'
-          type='button'
-        >
+        <div className='group mt-4 flex w-full items-center justify-center rounded-md bg-primary py-3 text-white'>
           <AnimatedLink letters='SIGN UP' />
           <FaArrowRight className='size-6 -rotate-45 transition-all duration-500 ease-in-out group-hover:translate-x-5 group-hover:rotate-0' />
-        </button>
+        </div>
 
         <div className='box2 absolute right-0  top-10 size-9 translate-x-[111%] rounded-bl-3xl bg-white' />
         <div className='box1 absolute left-0  top-10  size-9 -translate-x-[111%] rounded-br-3xl bg-white' />

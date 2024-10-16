@@ -1,5 +1,7 @@
-import { useRef, useState } from "react";
-import Slider from "react-slick"; // Import Slider as default
+import { useRef, useState } from 'react';
+import Slider from 'react-slick';
+
+// Import Slider as default
 
 const useCarouselSlide = () => {
   const sliderRef = useRef<Slider | null>(null); // Ref type is Slider or null
