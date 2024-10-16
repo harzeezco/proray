@@ -1,6 +1,7 @@
 'use client';
 
 import useCarouselSlide from '@/hooks/use-carousel-slide';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Slider from 'react-slick';
 
@@ -12,7 +13,13 @@ const ClientStories = () => {
     useCarouselSlide();
 
   return (
-    <section className='mt-24 text-gray-200 '>
+    <motion.section
+      className='mt-24 text-gray-200 '
+      initial={{ filter: 'blur(10px)', opacity: 0 }} // Initial blur and opacity
+      transition={{ duration: 0.5 }} // Animation duration
+      viewport={{ once: true }}
+      whileInView={{ filter: 'blur(0px)', opacity: 1 }} // Animate based on visibility
+    >
       <h1 className='text-balance text-center text-3xl font-bold text-gray-200'>
         What people say about us
       </h1>
@@ -83,7 +90,7 @@ const ClientStories = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

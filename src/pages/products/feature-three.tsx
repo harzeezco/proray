@@ -14,26 +14,20 @@ interface Image1 {
 // Image data
 const images: Image1[] = [
   {
-    src: '/image/apron.png',
-    title: 'Lead Aprons',
+    src: '/image/syringe.png',
+    title: 'CT Injector Syringes',
     caption:
-      'Essential protective wear designed to shield the body from harmful radiation during imaging procedures. Thyroid Collars',
+      'High-quality syringes compatible with CT injectors for precise and safe contrast media delivery.',
   },
   {
-    src: '/image/collar.png',
-    title: 'Thyroid Collars',
+    src: '/image/syringe.png',
+    title: 'CT Injector Syringes',
     caption:
-      'Specialized collars that protect the thyroid gland from radiation exposure.',
-  },
-  {
-    src: '/image/glasses.png',
-    title: 'Lead Glasses',
-    caption:
-      'Essential protective wear designed to shield the body from harmful radiation during imaging procedures. Thyroid Collars',
+      'High-quality syringes compatible with CT injectors for precise and safe contrast media delivery.',
   },
 ];
 
-const Features: React.FC = () => {
+const ThirdFeature: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const captionsRef = useRef<HTMLDivElement | null>(null);
 
@@ -72,11 +66,11 @@ const Features: React.FC = () => {
   }, []);
 
   return (
-    <section className='container mt-[120px] max-[500px]:hidden'>
+    <section className='container mt-[64px] max-[500px]:hidden'>
       <h1 className='mb-10 max-w-[400px] text-3xl font-bold text-blue-200 max-sm:mb-5 md:max-w-[500px] md:text-4xl lg:max-w-[600px] lg:text-5xl'>
-        Radiation protective equipment
+        Consumables
       </h1>
-      <div className='flex items-center justify-between gap-x-5 '>
+      <div className='flex items-center  justify-between gap-x-5'>
         {/* Image Section */}
         {images.length > 0 && (
           <div className='h-full'>
@@ -105,13 +99,13 @@ const Features: React.FC = () => {
         {/* Caption Section with scrollable area */}
         <div
           ref={captionsRef}
-          className='custom-scrollbar  relative flex h-60 snap-mandatory snap-start flex-col overflow-y-scroll pr-3 text-gray-200'
+          className='custom-scrollbar relative flex h-40 snap-y snap-mandatory flex-col overflow-y-scroll text-gray-200'
         >
           {images.map((item, index) => (
             <div
               key={index}
-              className={`mt-5 h-fit flex-none snap-start transition-opacity  duration-300 ${
-                currentIndex === index ? 'opacity-100' : 'opacity-10'
+              className={`mt-5 h-40 flex-none snap-start pr-3 transition-opacity duration-300 ${
+                currentIndex === index ? 'opacity-100' : 'opacity-30'
               }`}
             >
               <div className='size-fit overflow-hidden'>
@@ -119,7 +113,7 @@ const Features: React.FC = () => {
                   animate={{
                     translateY: currentIndex === index ? 0 : 25,
                   }}
-                  className='text-xl font-bold leading-none text-gray-200'
+                  className='text-xl font-bold leading-[0.9] text-gray-200'
                   initial={{ translateY: 25 }}
                   transition={{ duration: 0.3, ease: 'easeOut' }}
                 >
@@ -127,17 +121,17 @@ const Features: React.FC = () => {
                 </motion.h1>
               </div>
               <motion.p
-                // initial={{ translateY: 25, opacity: 0 }}
-                // animate={{
-                //   translateY: currentIndex === index ? 0 : 25,
-                //   opacity: currentIndex === index ? 1 : 0,
-                // }}
-                // transition={{
-                //   duration: 0.3,
-                //   ease: 'easeOut',
-                //   delay: 0.2,
-                // }}
+                animate={{
+                  translateY: currentIndex === index ? 0 : 25,
+                  opacity: currentIndex === index ? 1 : 0,
+                }}
                 className='mt-2 max-w-[350px] text-left text-lg text-zinc-700'
+                initial={{ translateY: 25, opacity: 0 }}
+                transition={{
+                  duration: 0.3,
+                  ease: 'easeOut',
+                  delay: 0.2,
+                }}
               >
                 {item.caption}
               </motion.p>
@@ -149,4 +143,4 @@ const Features: React.FC = () => {
   );
 };
 
-export default Features;
+export default ThirdFeature;

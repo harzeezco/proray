@@ -15,7 +15,7 @@ const SERVICES = [
 const Hero = () => (
   <section>
     <div className='container mt-14'>
-      <h1 className='mx-auto text-center font-satoshi text-4xl font-bold text-dark-600 md:max-w-[600px] md:text-5xl lg:max-w-[900px] lg:text-5xl'>
+      <h1 className='mx-auto text-center font-satoshi text-4xl font-bold text-dark-600 md:max-w-[600px] md:text-5xl lg:max-w-[900px] lg:text-6xl'>
         Comprehensive Medical Equipment and Supplies
       </h1>
 
@@ -38,14 +38,18 @@ const Hero = () => (
       </div>
     </div>
 
-    <div className='mt-14 flex'>
-      <Image
-        alt='a patient standing'
-        className='h-[450px] w-full'
-        height={388}
-        src='/image/product-hero.png'
-        width={1200}
-      />
+    <div className='mt-[220px] bg-blue-200 '>
+      <div className='relative mx-auto mt-14 flex w-fit  -translate-y-1/4 items-center  justify-center '>
+        <Image
+          alt='medical accessories'
+          className='h-[420px] shrink-0 rounded-xl
+           bg-cover  bg-center max-lg:min-w-[800px] max-[900px]:h-[300px] max-[475px]:-translate-x-32 '
+          height={388}
+          src='/image/product-hero.png'
+          width={1200}
+        />
+        <div className='box3 absolute bottom-[75px] left-0 size-10 rounded-bl-xl bg-transparent max-[900px]:hidden' />
+      </div>
     </div>
   </section>
 );

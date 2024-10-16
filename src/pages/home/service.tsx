@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const ServiceSection = () => (
@@ -12,11 +15,15 @@ const ServiceSection = () => (
       Our Key Services
     </h1>
 
-    <div className='grid max-w-5xl grid-cols-10 gap-6 p-6 max-[831px]:grid-cols-1'>
+    <div className='mx-auto  grid max-w-5xl grid-cols-10 gap-6 p-6 max-[831px]:grid-cols-1'>
       {/* Service 1 */}
-      <article
+      <motion.article
         aria-labelledby='hr-training'
         className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6 min-[831px]:justify-center'
+        initial={{ opacity: 0, y: 20 }} // Start with hidden opacity and slight upward position
+        transition={{ duration: 0.5, ease: 'easeInOut' }} // Animation duration
+        viewport={{ once: true }} // Only animate once when in view
+        whileInView={{ opacity: 1, y: 0 }} // Animate to visible and original position
       >
         <Image
           alt='Human Resources icon'
@@ -49,12 +56,16 @@ const ServiceSection = () => (
             <li>Performance management frameworks</li>
           </ul>
         </div>
-      </article>
+      </motion.article>
 
       {/* Service 2 */}
-      <article
+      <motion.article
         aria-labelledby='project-management'
         className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
       >
         <Image
           alt='Project Management icon'
@@ -79,12 +90,16 @@ const ServiceSection = () => (
             <li>Dedicated project managers</li>
           </ul>
         </div>
-      </article>
+      </motion.article>
 
       {/* Service 3 */}
-      <article
+      <motion.article
         aria-labelledby='clinical-governance'
         className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-5 min-[831px]:justify-center'
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
       >
         <Image
           alt='Clinical Governance icon'
@@ -110,13 +125,16 @@ const ServiceSection = () => (
             <li>Training strategies for healthcare compliance</li>
           </ul>
         </div>
-      </article>
+      </motion.article>
 
       {/* Service 4 */}
-      <article
+      <motion.article
         aria-labelledby='equipment-servicing'
-        className='flex items-start justify-start gap-5 rounded-lg  bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-5
-          min-[831px]:justify-center'
+        className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-5 min-[831px]:justify-center'
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.6 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
       >
         <Image
           alt='Equipment Servicing icon'
@@ -148,7 +166,7 @@ const ServiceSection = () => (
             </li>
           </ul>
         </div>
-      </article>
+      </motion.article>
     </div>
   </section>
 );

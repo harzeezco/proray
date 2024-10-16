@@ -1,12 +1,8 @@
-// About Us.
-// Radaition
-// Shielding
-// X-Ray
-// Diagnostics
-// Consumables
-// Medicals
+'use client';
+
 import AnimatedLink from '@/components/animated-text';
 import Button from '@/components/button';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa6';
 
@@ -20,9 +16,15 @@ const SERVICES = [
 ];
 
 const AboutSection = () => (
-  <section className='container pt-10 max-md:py-[20px]'>
+  <section className='container mb-[120px] pt-10 max-md:py-[20px]'>
     <div className=' bg-white'>
-      <div className='container'>
+      <motion.div
+        className='container'
+        initial={{ translateY: 20, opacity: 0 }}
+        transition={{ duration: 0.3, delay: 0.3, ease: 'easeOut' }}
+        viewport={{ once: true }}
+        whileInView={{ translateY: 0, opacity: 1 }}
+      >
         <p className='text-center text-xl text-gray-100'>
           Trusted by top medical companies and startups around the
           world
@@ -33,21 +35,32 @@ const AboutSection = () => (
           src='/image/trustee.png'
           width={1000}
         />
-      </div>
+      </motion.div>
     </div>
-    <div className='flex  items-start justify-between gap-x-5 gap-y-20 pt-[120px] max-sm:flex-col'>
+    <motion.div
+      className='flex items-start justify-between gap-x-5 gap-y-20 pt-[120px] max-sm:flex-col'
+      exit={{ opacity: 0, filter: 'blur(5px)' }} // Exit animation
+      initial={{ opacity: 0, filter: 'blur(5px)' }} // Initial state
+      transition={{ duration: 0.5 }} // Duration for the whole transition
+      viewport={{ once: true }}
+      whileInView={{ opacity: 1, filter: 'blur(0px)' }} // Animate to this state
+    >
       <div>
         <h1 className='mb-5 text-3xl font-bold text-gray-200'>
           About US<span className='text-primary'>.</span>
         </h1>
-        <ul className='flex flex-wrap items-center justify-start  gap-2'>
+        <ul className='flex flex-wrap items-center justify-start gap-2'>
           {SERVICES.map((service, i) => (
-            <li
+            <motion.li
               key={i}
-              className='rounded-full border-2 border-primary bg-blue-300 px-8 py-3 text-primary '
+              className='rounded-full border-2 border-primary bg-blue-300 px-8 py-3 text-primary'
+              initial={{ opacity: 0, y: -10 }} // Initial state for child
+              transition={{ delay: i * 0.2, duration: 0.3 }} // Staggered delay
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, y: 0 }} // Animate to this state
             >
               {service}
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
@@ -55,7 +68,7 @@ const AboutSection = () => (
         <h1 className='mb-5 text-3xl font-bold text-gray-200'>
           Proray Solutions<span className='text-primary'>.</span>
         </h1>
-        <p className=' text-balance text-lg text-gray-100'>
+        <p className='text-balance text-lg text-gray-100'>
           Pro-Ray Solutions Ltd is an independent supplier of
           innovative imaging equipment and associated healthcare
           products. We are also a major manufacturer and installer of
@@ -77,7 +90,7 @@ const AboutSection = () => (
           <FaArrowRight className='ml-2 inline-block size-5 -rotate-45 transition-transform duration-300 ease-in-out group-hover:rotate-0' />
         </Button>
       </div>
-    </div>
+    </motion.div>
   </section>
 );
 
