@@ -27,16 +27,9 @@ const NAVLINKS: LinksType[] = [
 const Header: React.FC = () => {
   const menuRef = useRef<HTMLUListElement>(null);
   const pathname = usePathname();
-  const [windowScreen, setWindowScreen] = useState<number>(0); // Initialize as 0
+  const [windowScreen, setWindowScreen] = useState<number>(0);
   const [active, setActive] = useState<string>('home');
   const [opened, setOpened] = useState<boolean>(false);
-
-  useEffect(() => {
-    // Run this effect only on the client side
-    if (typeof globalThis !== 'undefined') {
-      setWindowScreen(window.innerWidth); // Set window width when client-side
-    }
-  }, []);
 
   const handleActiveLink = (title: string) => {
     setActive(title);
@@ -62,6 +55,22 @@ const Header: React.FC = () => {
   }, []);
 
   // large screen check
+
+  useEffect(() => {
+    // Run this effect only on the client side
+    if (typeof globalThis !== 'undefined') {
+      setWindowScreen(window.innerWidth); // Set window width when client-side
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+  // large screen check
   const isLarge = windowScreen <= 968;
 
   function handleWindowResize() {
@@ -69,7 +78,6 @@ const Header: React.FC = () => {
       setWindowScreen(window.innerWidth); // Update window width
     }
   }
-
   useEffect(() => {
     // Attach resize event listener
     if (typeof globalThis !== 'undefined') {
@@ -83,9 +91,22 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  // const isLarge = windowScreen <= 968;
+
+  // function handleWindowResize() {
+  //   setWindowScreen(window.innerWidth);
+  // }
+  // useEffect(() => {
+  //   document.addEventListener('resize', handleWindowResize);
+
+  //   return () => {
+  //     document.removeEventListener('resize', handleWindowResize);
+  //   };
+  // }, []);
+
   return (
     <header
-      className={`w-full ${pathname === '/' ? 'bg-blue-200' : 'bg-white'}`}
+      className={` w-full ${pathname === '/' ? 'bg-blue-200' : 'bg-white'}`}
     >
       <div className='container relative z-[9999] flex items-center justify-between py-4'>
         <motion.div
@@ -111,7 +132,8 @@ const Header: React.FC = () => {
           )}
         </motion.div>
 
-        <div className='overflow-hidden'>
+        {/* Menu (for larger screens, displayed as flex) */}
+        <div className='overflow-hidden '>
           <ul
             ref={menuRef}
             className={`right-0  top-0 z-50 flex gap-10 rounded-t-3xl max-md:fixed max-md:h-screen max-md:w-full max-md:flex-col max-md:bg-white max-md:pl-10 max-md:pt-24 max-md:text-xl max-md:transition-transform max-md:duration-500 md:relative md:flex-row ${
@@ -127,18 +149,13 @@ const Header: React.FC = () => {
                 onClick={() => setActive(title)}
               >
                 <motion.li
-                  className='capitalize'
+                  className='capitalize  '
                   initial={{
                     translateY: isLarge ? -20 : 0,
                     opacity: 1,
                   }}
                   style={{
-                    color:
-                      active === title
-                        ? '#0E90C2 ' // Active link color
-                        : pathname === 'address'
-                          ? '#0E90C2'
-                          : '#89939E',
+                    color: active === title ? '#0E90C2' : '#89939E',
                   }}
                   transition={{ duration: 0.3, delay: 0.1 * i }}
                   viewport={{ once: true }}
@@ -187,19 +204,17 @@ const Header: React.FC = () => {
           </ul>
         </div>
 
+        {/* Get in touch link (hidden on smaller screens) */}
         <Link href='/contact'>
           <AnimatedLink
-            className={`menu-button rounded-lg border-2 px-8 py-3 transition-colors duration-300 hover:border-primary hover:bg-primary max-md:hidden ${
-              pathname === '/'
-                ? ' border-white'
-                : 'border-primary text-primary hover:text-white'
-            }`}
+            className={`menu-button rounded-lg border-2 px-8 py-3 transition-colors duration-300 hover:border-primary hover:bg-primary max-md:hidden ${pathname === '/' ? ' border-white' : 'border-primary text-primary hover:text-white'}`}
             letters='Get In Touch'
           />
         </Link>
 
+        {/* Animated Hamburger Menu Button */}
         <motion.button
-          className='menu-button right-5 top-2 z-50 flex size-10 flex-col items-center justify-center rounded-sm bg-blue-300 max-md:fixed md:hidden'
+          className='menu-button right-5 top-2 z-50  flex size-10 flex-col items-center justify-center rounded-sm   bg-blue-300 max-md:fixed md:hidden'
           initial={{ translateY: -20, opacity: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
           type='button'
@@ -221,11 +236,7 @@ const Header: React.FC = () => {
           opacity: opened ? 0.5 : 0,
           backdropFilter: opened ? 'blur(5px)' : 'blur(0px)',
         }}
-        className={`${
-          opened && isLarge
-            ? 'fixed inset-0 z-50 size-full bg-black'
-            : 'pointer-events-none hidden'
-        }`}
+        className={` ${opened && isLarge ? 'fixed inset-0 z-50 size-full bg-black' : 'pointer-events-none hidden'}`}
         initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
       />
