@@ -3,7 +3,6 @@
 import AnimatedLink from '@/components/animated-text';
 import Button from '@/components/button';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa6';
 
 const SERVICES = [
@@ -16,8 +15,8 @@ const SERVICES = [
 ];
 
 const AboutSection = () => (
-  <section className='container mb-[120px] pt-10 max-md:py-[20px]'>
-    <div className=' bg-white'>
+  <section className='container  -mt-10 bg-white pt-10 max-md:py-[20px]'>
+    {/* <div className=' bg-white'>
       <motion.div
         className='container'
         initial={{ translateY: 20, opacity: 0 }}
@@ -36,9 +35,9 @@ const AboutSection = () => (
           width={1000}
         />
       </motion.div>
-    </div>
+    </div> */}
     <motion.div
-      className='flex items-start justify-between gap-x-5 gap-y-20 pt-[120px] max-sm:flex-col'
+      className='flex items-start   justify-between gap-x-5 gap-y-20 pt-[120px] max-sm:flex-col'
       exit={{ opacity: 0, filter: 'blur(5px)' }} // Exit animation
       initial={{ opacity: 0, filter: 'blur(5px)' }} // Initial state
       transition={{ duration: 0.5 }} // Duration for the whole transition

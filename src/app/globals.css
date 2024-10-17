@@ -68,3 +68,9 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.blurred {
+  filter: blur(5px); /* Adjust the blur intensity as needed */
+  opacity: 0.5; /* Reduce opacity */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}

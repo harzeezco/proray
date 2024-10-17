@@ -16,7 +16,7 @@ const Services = () => (
         />
         Our Value
       </button>
-      <h1 className='mx-auto mt-5 text-center font-satoshi text-4xl font-medium text-dark-600 md:max-w-[600px] md:text-5xl lg:max-w-[900px] lg:text-5xl'>
+      <h1 className='mx-auto mt-5 text-center font-satoshi  text-3xl font-medium text-dark-600 md:max-w-[600px] md:text-4xl lg:max-w-[900px] lg:text-5xl'>
         Empowering Healthcare Professionals—All in One Place
       </h1>
       <p className='mx-auto mt-3 max-w-[750px] text-center text-gray-250'>
@@ -30,7 +30,7 @@ const Services = () => (
     <div className='mt-5 grid max-w-6xl grid-cols-12 gap-6 p-6 text-gray-150 max-[831px]:grid-cols-1'>
       <article
         aria-labelledby='hr-training'
-        className='space-y-5 rounded-lg bg-blue-400 p-5 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        className='space-y-5 rounded-lg bg-blue-400 p-5  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
       >
         <Image
           alt='Human Resources icon'
@@ -57,7 +57,7 @@ const Services = () => (
       {/* Service 2 */}
       <article
         aria-labelledby='project-management'
-        className='space-y-5  rounded-lg bg-blue-400 p-5 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        className='space-y-5  rounded-lg bg-blue-400 p-5  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
       >
         <Image
           alt='Project Management icon'
@@ -84,7 +84,7 @@ const Services = () => (
       {/* Service 3 */}
       <article
         aria-labelledby='clinical-governance'
-        className='space-y-5 rounded-lg bg-blue-400 p-5 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        className='space-y-5 rounded-lg bg-blue-400 p-5  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
       >
         <Image
           alt='Clinical Governance icon'
@@ -111,7 +111,7 @@ const Services = () => (
       {/* Service 4 */}
       <article
         aria-labelledby='equipment-servicing'
-        className='space-y-5 rounded-lg bg-blue-400 p-5 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6
+        className='space-y-5 rounded-lg bg-blue-400 p-5  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6
           min-[831px]:justify-center'
       >
         <Image
@@ -137,7 +137,7 @@ const Services = () => (
 
       <article
         aria-labelledby='project-management'
-        className='space-y-5 rounded-lg bg-blue-400 p-5 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6 min-[831px]:justify-center'
+        className='space-y-5 rounded-lg bg-blue-400 p-5  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6 min-[831px]:justify-center'
       >
         <Image
           alt='Project Management icon'

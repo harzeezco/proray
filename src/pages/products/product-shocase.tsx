@@ -14,6 +14,6 @@ const ProductShocase = () => (
     <FifthFeature />
     <MobileProduct />
   </section>
-  );
+);
 
 export default ProductShocase;

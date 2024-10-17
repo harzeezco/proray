@@ -5,7 +5,13 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import {
+  FaFacebookSquare,
+  FaInstagramSquare,
+  FaTwitterSquare,
+} from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa6';
 
 interface LinksType {
   address: string;
@@ -19,7 +25,11 @@ const NAVLINKS: LinksType[] = [
 ];
 
 const Header: React.FC = () => {
+  const menuRef = useRef<HTMLUListElement>(null);
   const pathname = usePathname();
+  const [windowScreen, setWindowScreen] = useState<number>(
+    window.innerWidth,
+  );
   const [active, setActive] = useState<string>('home');
   const [opened, setOpened] = useState<boolean>(false);
 
@@ -28,11 +38,43 @@ const Header: React.FC = () => {
     setOpened(!opened);
   };
 
+  const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(event.target as Node) &&
+      !(event.target as HTMLElement).closest('.menu-button')
+    ) {
+      setOpened(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // large screen check
+  const isLarge = windowScreen <= 968;
+
+  function handleWindowResize() {
+    setWindowScreen(window.innerWidth);
+  }
+  useEffect(() => {
+    document.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      document.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
   return (
     <header
       className={` w-full ${pathname === '/' ? 'bg-blue-200' : 'bg-white'}`}
     >
-      <div className='container flex items-center justify-between py-4'>
+      <div className='container relative z-[9999] flex items-center justify-between py-4'>
         <motion.div
           initial={{ translateY: -20, opacity: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
@@ -57,51 +99,93 @@ const Header: React.FC = () => {
         </motion.div>
 
         {/* Menu (for larger screens, displayed as flex) */}
-        <ul
-          className={`right-0 top-0 z-50 flex gap-10 max-md:fixed max-md:h-screen max-md:w-full max-md:flex-col max-md:justify-center max-md:bg-blue-250 max-md:pl-10 max-md:text-xl max-md:transition-transform max-md:duration-500 md:relative md:flex-row ${
-            opened
-              ? 'max-md:translate-y-0'
-              : 'max-md:translate-y-full'
-          }`}
-        >
-          {NAVLINKS.map(({ address, title }, i) => (
-            <Link key={i} href={address}>
-              <motion.li
-                className='capitalize'
-                initial={{ translateY: -20, opacity: 0 }}
-                style={{
-                  color:
-                    active === title
-                      ? '#0E90C2 ' // Active link color
-                      : pathname === '/' // For inactive links
-                        ? '#fff'
-                        : '#0E90C2',
-                }}
-                transition={{ duration: 0.3, delay: 0.1 * i }}
-                viewport={{ once: true }}
-                whileInView={{ translateY: 0, opacity: 1 }}
-                onClick={() => handleActiveLink(title)}
+        <div className='overflow-hidden '>
+          <ul
+            ref={menuRef}
+            className={`right-0  top-0 z-50 flex gap-10 rounded-t-3xl max-md:fixed max-md:h-screen max-md:w-full max-md:flex-col max-md:bg-white max-md:pl-10 max-md:pt-24 max-md:text-xl max-md:transition-transform max-md:duration-500 md:relative md:flex-row ${
+              opened
+                ? 'max-md:translate-y-28'
+                : 'max-md:translate-y-[200vh]'
+            }`}
+          >
+            {NAVLINKS.map(({ address, title }, i) => (
+              <Link
+                key={i}
+                href={address}
+                onClick={() => setActive(title)}
               >
-                <AnimatedLink letters={title} />
-              </motion.li>
-            </Link>
-          ))}
+                <motion.li
+                  className='capitalize'
+                  initial={{
+                    translateY: isLarge ? -20 : 0,
+                    opacity: 1,
+                  }}
+                  style={{
+                    color:
+                      active === title
+                        ? '#0E90C2 ' // Active link color
+                        : pathname === 'adress' // For inactive links
+                          ? '#0E90C2'
+                          : '#89939E',
+                  }}
+                  transition={{ duration: 0.3, delay: 0.1 * i }}
+                  viewport={{ once: true }}
+                  whileInView={{ translateY: 0, opacity: 1 }}
+                  onClick={() => handleActiveLink(title)}
+                >
+                  <AnimatedLink letters={title} />
+                </motion.li>
+              </Link>
+            ))}
 
-          <AnimatedLink
-            className=' max-w-fit rounded-sm border-white bg-blue-300 px-8 py-3 text-primary transition-colors duration-300  hover:border-primary md:hidden'
-            letters='Get In Touch'
-          />
-        </ul>
+            <div className='mt-5 flex gap-2 md:hidden'>
+              <Link
+                className='rounded-lg border-2 border-zinc-200 p-4 text-primary transition-all duration-300 ease-in-out hover:border-transparent hover:bg-primary hover:text-zinc-50'
+                href='/'
+              >
+                <FaTwitterSquare />
+              </Link>
+              <Link
+                className='rounded-lg border-2 border-zinc-200 p-4 text-primary transition-all duration-300 ease-in-out hover:border-transparent hover:bg-primary hover:text-zinc-50'
+                href='/'
+              >
+                <FaInstagramSquare />
+              </Link>
+              <Link
+                className='rounded-lg border-2 border-zinc-200 p-4 text-primary transition-all duration-300 ease-in-out hover:border-transparent hover:bg-primary hover:text-zinc-50'
+                href='/'
+              >
+                <FaFacebookSquare />
+              </Link>
+              <Link
+                className='rounded-lg border-2 border-zinc-200 p-4 text-primary transition-all duration-300 ease-in-out hover:border-transparent hover:bg-primary hover:text-zinc-50'
+                href='/'
+              >
+                <FaLinkedin />
+              </Link>
+            </div>
+
+            <button
+              className='top-3 mr-10 flex items-center justify-center rounded-full bg-primary p-3 text-white md:hidden'
+              type='button'
+              onClick={() => setOpened(!opened)}
+            >
+              <p>Close</p>
+            </button>
+          </ul>
+        </div>
 
         {/* Get in touch link (hidden on smaller screens) */}
-        <AnimatedLink
-          className={`rounded-lg border-2 px-8 py-3 transition-colors duration-300 hover:border-primary hover:bg-primary max-md:hidden ${pathname === '/' ? ' border-white' : 'border-primary text-primary hover:text-white'}`}
-          letters='Get In Touch'
-        />
+        <Link href='/contact'>
+          <AnimatedLink
+            className={`menu-button rounded-lg border-2 px-8 py-3 transition-colors duration-300 hover:border-primary hover:bg-primary max-md:hidden ${pathname === '/' ? ' border-white' : 'border-primary text-primary hover:text-white'}`}
+            letters='Get In Touch'
+          />
+        </Link>
 
         {/* Animated Hamburger Menu Button */}
         <motion.button
-          className='right-5 top-2 z-50  flex size-10 flex-col items-center justify-center rounded-sm   bg-blue-300 max-md:fixed md:hidden'
+          className='menu-button right-5 top-2 z-50  flex size-10 flex-col items-center justify-center rounded-sm   bg-blue-300 max-md:fixed md:hidden'
           initial={{ translateY: -20, opacity: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
           type='button'
@@ -118,6 +202,15 @@ const Header: React.FC = () => {
           />
         </motion.button>
       </div>
+      <motion.div
+        animate={{
+          opacity: opened ? 0.5 : 0,
+          backdropFilter: opened ? 'blur(5px)' : 'blur(0px)',
+        }}
+        className={` ${opened && isLarge ? 'fixed inset-0 z-50 size-full bg-black' : 'pointer-events-none hidden'}`}
+        initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+      />
     </header>
   );
 };

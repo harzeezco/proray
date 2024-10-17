@@ -74,7 +74,7 @@ const MobileProduct = () => (
     <Product2 />
     <Product3 />
   </div>
-  );
+);
 
 export default MobileProduct;
 

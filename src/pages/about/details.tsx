@@ -1,5 +1,5 @@
 const Details = () => (
-  <section className='bg-blue-400 px-10 py-14 text-3xl font-medium text-blue-250'>
+  <section className='bg-blue-400 px-10 py-14 text-xl font-medium text-blue-250 md:text-2xl lg:text-3xl'>
     <div className='container mx-auto max-w-[750px] text-center'>
       <p>
         Pro-Ray Solutions Ltd is an independent supplier of innovative

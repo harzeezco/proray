@@ -6,7 +6,7 @@ import Image from 'next/image';
 const ServiceSection = () => (
   <section
     aria-labelledby='services-heading'
-    className='container pt-[120px]'
+    className='container pt-[120px] max-sm:pt-[48px]'
   >
     <h1
       className='mb-5 text-center text-3xl font-bold text-gray-200'
@@ -19,7 +19,7 @@ const ServiceSection = () => (
       {/* Service 1 */}
       <motion.article
         aria-labelledby='hr-training'
-        className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6 min-[831px]:justify-center'
+        className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6 min-[831px]:justify-center'
         initial={{ opacity: 0, y: 20 }} // Start with hidden opacity and slight upward position
         transition={{ duration: 0.5, ease: 'easeInOut' }} // Animation duration
         viewport={{ once: true }} // Only animate once when in view
@@ -61,7 +61,7 @@ const ServiceSection = () => (
       {/* Service 2 */}
       <motion.article
         aria-labelledby='project-management'
-        className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}
         viewport={{ once: true }}
@@ -95,7 +95,7 @@ const ServiceSection = () => (
       {/* Service 3 */}
       <motion.article
         aria-labelledby='clinical-governance'
-        className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-5 min-[831px]:justify-center'
+        className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-5 min-[831px]:justify-center'
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}
         viewport={{ once: true }}
@@ -130,7 +130,7 @@ const ServiceSection = () => (
       {/* Service 4 */}
       <motion.article
         aria-labelledby='equipment-servicing'
-        className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6 shadow-md max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-5 min-[831px]:justify-center'
+        className='flex items-start justify-start gap-5 rounded-lg bg-blue-400 p-6  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-5 min-[831px]:justify-center'
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.6 }}
         viewport={{ once: true }}

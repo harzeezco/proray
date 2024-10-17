@@ -90,7 +90,7 @@ const Footer = () => (
       </form>
 
       <div className='mt-20 flex items-center justify-between rounded-t-3xl border-t-2 border-white px-5 py-3 max-[550px]:flex-col max-[550px]:items-start'>
-        <p className='opacity-15 max-[550px]:order-2 max-[550px]:mx-auto max-[550px]:pt-5'>
+        <p className='max- opacity-15 max-[550px]:order-2 max-[550px]:mx-auto'>
           All rights reserved. Copyrights © 2024 Ltd.
         </p>
         <div className='grid cursor-pointer grid-cols-3 items-center justify-center gap-4 max-sm:mx-auto max-sm:hidden'>

@@ -63,13 +63,13 @@ const Hero = () => (
     {/* Banner image section */}
 
     <motion.div
-      className='relative mt-20 flex h-[50vh] w-screen items-center justify-center bg-white max-[500px]:h-[30vh] md:h-[80vh] lg:h-[90vh]'
+      className='relative mt-20 flex h-[50vh] w-full items-center justify-center bg-white max-[500px]:h-[30vh] md:h-[80vh] lg:h-[90vh]'
       initial={{ translateY: 20, opacity: 0 }}
-      transition={{ duration: 0.5, delay: 1 }}
+      transition={{ duration: 0.3, delay: 1 }}
       viewport={{ once: true }}
       whileInView={{ translateY: 0, opacity: 1 }}
     >
-      <div className='absolute top-0 mx-auto -translate-y-[20%]   max-md:container  max-md:shadow-2xl '>
+      <div className='absolute top-0 mx-auto -translate-y-[20%]   max-md:container   '>
         <Image
           alt='medical tool'
           className=' relative  rounded-lg border-4 border-white'

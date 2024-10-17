@@ -31,8 +31,8 @@ const ProjectSection = () => {
   };
 
   return (
-    <section className='pt-28'>
-      <div className='container grid grid-cols-2 items-start justify-center gap-10 max-sm:grid-cols-1'>
+    <section className='pt-[120px] max-sm:pt-[48px]'>
+      <div className='container grid grid-cols-2 items-start justify-center gap-[48px] max-sm:grid-cols-1 max-sm:gap-6'>
         <motion.h1
           className='text-3xl font-bold text-gray-200'
           initial='hidden'
@@ -62,7 +62,7 @@ const ProjectSection = () => {
 
       <section className='container grid grid-cols-2 items-center justify-center gap-10 max-md:grid-cols-1'>
         {/* First Project Row */}
-        <ul className='flex size-full flex-col gap-3 rounded-lg bg-banner-img2 bg-cover bg-center bg-no-repeat p-6 text-gray-200 shadow-md max-md:order-2 lg:p-10'>
+        <ul className='flex size-full flex-col gap-3 rounded-lg bg-banner-img2 bg-cover bg-center bg-no-repeat p-6 text-gray-200  max-md:order-2 lg:p-10'>
           <motion.li
             custom={0}
             initial='hidden'
@@ -71,7 +71,7 @@ const ProjectSection = () => {
             whileInView='visible'
           >
             <p className='text-gray-100'>Project</p>
-            <p>Radiation Safety Upgrade for Major Hospital</p>
+            <p>X-ray Room Shielding for Healthcare Facility</p>
           </motion.li>
           <motion.li
             custom={1}
@@ -81,7 +81,7 @@ const ProjectSection = () => {
             whileInView='visible'
           >
             <p className='text-gray-100'>Client</p>
-            <p>Lagos General Hospital, Lagos</p>
+            <p>IOM Ikeja, Lagos</p>
           </motion.li>
           <motion.li
             custom={2}
@@ -92,8 +92,9 @@ const ProjectSection = () => {
           >
             <p className='text-gray-100'>Challenges</p>
             <p>
-              Outdated radiation protection measures that didn’t meet
-              current safety standards.
+              Inadequate shielding in the X-ray room, leading to
+              radiation leakage and non-compliance with safety
+              standards.
             </p>
           </motion.li>
           <motion.li
@@ -105,9 +106,10 @@ const ProjectSection = () => {
           >
             <p className='text-gray-100'>Solution</p>
             <p>
-              Provided comprehensive shielding upgrades and advanced
-              radiation protection gear, ensuring compliance and
-              improved safety for staff.
+              Installed high-quality lead-lined walls, doors, and
+              protective windows, alongside modern radiation shielding
+              equipment, ensuring full compliance with safety
+              regulations.
             </p>
           </motion.li>
           <motion.li
@@ -119,8 +121,10 @@ const ProjectSection = () => {
           >
             <p className='text-gray-100'>Impact</p>
             <p>
-              Increased safety and staff confidence, with radiation
-              exposure reduced by 60%.
+              Achieved a 70% reduction in radiation exposure,
+              improving safety for both staff and patients, and
+              enhancing the facility&apos;s compliance with
+              international standards.
             </p>
           </motion.li>
         </ul>
@@ -134,10 +138,11 @@ const ProjectSection = () => {
             whileInView={{ opacity: 1 }}
           >
             <Image
-              alt='x-ray box'
+              alt='medical machine'
               className='size-full h-full object-cover'
               height={400}
-              src='/image/xray-box.png'
+              src='/image/product2.webp
+              '
               width={1000}
             />
           </motion.div>
@@ -156,13 +161,13 @@ const ProjectSection = () => {
               alt='medical meter'
               className='size-full h-full object-cover'
               height={400}
-              src='/image/medical-tool1.png'
+              src='/image/product1.webp'
               width={1000}
             />
           </motion.div>
         </div>
 
-        <ul className='flex size-full flex-col gap-3 rounded-lg bg-banner-img2 bg-cover bg-center bg-no-repeat p-6 text-gray-200 shadow-md max-md:order-4 lg:p-10'>
+        <ul className='flex size-full flex-col gap-3 rounded-lg bg-banner-img2 bg-cover bg-center bg-no-repeat p-6 text-gray-200  max-md:order-4 lg:p-10'>
           <motion.li
             custom={0}
             initial='hidden'
@@ -171,7 +176,9 @@ const ProjectSection = () => {
             whileInView='visible'
           >
             <p className='text-gray-100'>Project</p>
-            <p>Advanced Diagnostic Solutions for Rural Clinics</p>
+            <p>
+              Walnut Finished Lead Lined Sliding Door Set for CT Room
+            </p>
           </motion.li>
           <motion.li
             custom={1}
@@ -181,7 +188,7 @@ const ProjectSection = () => {
             whileInView='visible'
           >
             <p className='text-gray-100'>Client</p>
-            <p>Olanrewaju Medical Center, Kwara State</p>
+            <p>ABC Foundation, Ibadan</p>
           </motion.li>
           <motion.li
             custom={2}
@@ -192,8 +199,9 @@ const ProjectSection = () => {
           >
             <p className='text-gray-100'>Challenges</p>
             <p>
-              Lack of reliable diagnostic equipment, leading to delays
-              in patient care.
+              The existing door lacked proper radiation shielding,
+              compromising safety and not meeting the necessary
+              compliance standards for a CT room.
             </p>
           </motion.li>
           <motion.li
@@ -205,8 +213,10 @@ const ProjectSection = () => {
           >
             <p className='text-gray-100'>Solution</p>
             <p>
-              Provided reliable diagnostic equipment for faster
-              patient care.
+              Installed a custom walnut-finished lead-lined sliding
+              door set, designed to enhance both the aesthetics and
+              functionality of the CT room while providing optimal
+              radiation protection.
             </p>
           </motion.li>
           <motion.li
@@ -218,94 +228,13 @@ const ProjectSection = () => {
           >
             <p className='text-gray-100'>Impact</p>
             <p>
-              40% increase in diagnostic accuracy and faster patient
-              treatment.
+              Ensured full compliance with radiation safety standards,
+              improved room accessibility with a sliding door
+              solution, and provided a visually appealing finish that
+              complemented the medical environment.
             </p>
           </motion.li>
         </ul>
-
-        {/* Third Project Row */}
-        <ul className='flex size-full flex-col gap-3 rounded-lg bg-banner-img2 bg-cover bg-center bg-no-repeat p-6 text-gray-200 shadow-md max-md:order-6 lg:p-10'>
-          <motion.li
-            custom={0}
-            initial='hidden'
-            variants={listItemVariants}
-            viewport={{ once: true }}
-            whileInView='visible'
-          >
-            <p className='text-gray-100'>Project</p>
-            <p>Custom Shielding for Mobile Radiology Units</p>
-          </motion.li>
-          <motion.li
-            custom={1}
-            initial='hidden'
-            variants={listItemVariants}
-            viewport={{ once: true }}
-            whileInView='visible'
-          >
-            <p className='text-gray-100'>Client</p>
-            <p>Zenith Specialist Hospital, Abuja</p>
-          </motion.li>
-          <motion.li
-            custom={2}
-            initial='hidden'
-            variants={listItemVariants}
-            viewport={{ once: true }}
-            whileInView='visible'
-          >
-            <p className='text-gray-100'>Challenges</p>
-            <p>
-              Designed and installed custom shielding solutions for
-              mobile units, along with portable radiation protection
-              gear.
-            </p>
-          </motion.li>
-          <motion.li
-            custom={3}
-            initial='hidden'
-            variants={listItemVariants}
-            viewport={{ once: true }}
-            whileInView='visible'
-          >
-            <p className='text-gray-100'>Solution</p>
-            <p>
-              Expanded access to safe diagnostic services in remote
-              communities, serving over 500 additional patients
-              monthly.
-            </p>
-          </motion.li>
-          <motion.li
-            custom={4}
-            initial='hidden'
-            variants={listItemVariants}
-            viewport={{ once: true }}
-            whileInView='visible'
-          >
-            <p className='text-gray-100'>Impact</p>
-            <p>
-              Increased safety and staff confidence, with radiation
-              exposure reduced by 60%.
-            </p>
-          </motion.li>
-        </ul>
-
-        <div className='size-full max-md:order-5'>
-          <motion.div
-            className='h-full overflow-hidden rounded-xl '
-            initial={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            whileInView={{ opacity: 1 }}
-          >
-            <Image
-              alt='medical meter'
-              className='size-full h-full object-cover'
-              height={400}
-              src='/image/medical-tool2.png'
-              width={1000}
-            />
-          </motion.div>
-        </div>
       </section>
     </section>
   );

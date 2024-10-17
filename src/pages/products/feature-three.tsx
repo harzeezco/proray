@@ -33,9 +33,9 @@ const ThirdFeature: React.FC = () => {
 
   const handleScroll = () => {
     if (captionsRef.current) {
-      const {scrollTop} = captionsRef.current;
-      const {scrollHeight} = captionsRef.current;
-      const {clientHeight} = captionsRef.current;
+      const { scrollTop } = captionsRef.current;
+      const { scrollHeight } = captionsRef.current;
+      const { clientHeight } = captionsRef.current;
       const totalScrollableHeight = scrollHeight - clientHeight;
 
       // Calculate the scroll position ratio (0 - 1)
