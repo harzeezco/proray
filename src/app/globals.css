@@ -17,6 +17,12 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+img {
+  display: block;
+}
+html {
+  overflow-x: hidden;
+}
 
 .showcase {
   border-radius: 12px;
