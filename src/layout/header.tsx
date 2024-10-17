@@ -149,7 +149,7 @@ const Header: React.FC = () => {
                 onClick={() => setActive(title)}
               >
                 <motion.li
-                  className='w-fit capitalize  transition-all '
+                  className='w-fit p-4  capitalize  transition-all '
                   style={{
                     color: active === title ? '#0E90C2' : '#89939E',
                   }}
