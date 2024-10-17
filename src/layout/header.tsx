@@ -190,7 +190,7 @@ const Header: React.FC = () => {
             </div>
 
             <button
-              className='top-3 mr-10 flex items-center justify-center rounded-full bg-primary p-3 text-white md:hidden'
+              className='mr-10  mt-24 flex items-center justify-center rounded-full bg-primary p-3 text-white md:hidden'
               type='button'
               onClick={() => setOpened(!opened)}
             >
