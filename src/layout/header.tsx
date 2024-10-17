@@ -153,12 +153,11 @@ const Header: React.FC = () => {
                   style={{
                     color: active === title ? '#0E90C2' : '#89939E',
                   }}
-                  transition={{ ease: 'easeInOut' }}
-                  whileHover={{ color: 'lightblue' }}
-                  whileTap={{ scale: 0.4 }}
+                  transition={{ ease: 'easeInOut', duration: 0.5 }}
+                  whileTap={{ scale: 0.9 }}
                   onClick={() => handleActiveLink(title)}
                 >
-                  {title}
+                  <AnimatedLink letters={title} />
                 </motion.li>
               </Link>
             ))}
