@@ -106,7 +106,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={` w-full ${pathname === '/' ? 'bg-blue-200' : 'bg-white'}`}
+      className={` relative w-full ${pathname === '/' ? 'bg-blue-200' : 'bg-white'}`}
     >
       <div className='container relative z-[9999] flex items-center justify-between py-4'>
         <motion.div
@@ -149,20 +149,16 @@ const Header: React.FC = () => {
                 onClick={() => setActive(title)}
               >
                 <motion.li
-                  className='capitalize  '
-                  initial={{
-                    translateY: isLarge ? -20 : 0,
-                    opacity: 1,
-                  }}
+                  className='w-fit capitalize  transition-all '
                   style={{
                     color: active === title ? '#0E90C2' : '#89939E',
                   }}
-                  transition={{ duration: 0.3, delay: 0.1 * i }}
-                  viewport={{ once: true }}
-                  whileInView={{ translateY: 0, opacity: 1 }}
+                  transition={{ ease: 'easeInOut' }}
+                  whileHover={{ color: 'lightblue' }}
+                  whileTap={{ scale: 0.4 }}
                   onClick={() => handleActiveLink(title)}
                 >
-                  <AnimatedLink letters={title} />
+                  {title}
                 </motion.li>
               </Link>
             ))}
