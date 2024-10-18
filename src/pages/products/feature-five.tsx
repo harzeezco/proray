@@ -30,6 +30,7 @@ const images: Image1[] = [
 const FifthFeature: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const captionsRef = useRef<HTMLDivElement | null>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   const handleScroll = () => {
     if (captionsRef.current) {
@@ -65,12 +66,38 @@ const FifthFeature: React.FC = () => {
     };
   }, []);
 
+  // Checking if section is already in the view
+  useEffect(() => {
+    const observer = new IntersectionObserver((enteries) => {
+      for (const entry of enteries) {
+        if (entry.isIntersecting) {
+          console.log('Aready in viwew');
+        } else {
+          console.log('section out of view');
+        }
+      }
+    });
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className='container mt-[64px] max-[500px]:hidden'>
+    <section className='container mt-[64px] max-[500px]:hidden  '>
       <h1 className='mb-10 text-3xl font-bold text-blue-200 max-sm:mb-5 md:max-w-[500px] md:text-4xl  lg:max-w-[600px] lg:text-5xl'>
         Operation Theatre Equipment
       </h1>
-      <div className='flex items-center  justify-between gap-x-5'>
+      <div
+        ref={sectionRef}
+        className='flex items-center  justify-between gap-x-5'
+      >
         {/* Image Section */}
         {images.length > 0 && (
           <div className='h-full'>

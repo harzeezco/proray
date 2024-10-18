@@ -8,36 +8,15 @@ import { FaArrowRight } from 'react-icons/fa6';
 const SERVICES = [
   'radiation',
   'shielding',
-  'x-ray',
   'diagnostics',
   'consumables',
   'medicals',
 ];
 
 const AboutSection = () => (
-  <section className='container  -mt-10 bg-white pt-10 max-md:py-[20px]'>
-    {/* <div className=' bg-white'>
-      <motion.div
-        className='container'
-        initial={{ translateY: 20, opacity: 0 }}
-        transition={{ duration: 0.3, delay: 0.3, ease: 'easeOut' }}
-        viewport={{ once: true }}
-        whileInView={{ translateY: 0, opacity: 1 }}
-      >
-        <p className='text-center text-xl text-gray-100'>
-          Trusted by top medical companies and startups around the
-          world
-        </p>
-        <Image
-          alt='logo'
-          height={20}
-          src='/image/trustee.png'
-          width={1000}
-        />
-      </motion.div>
-    </div> */}
+  <section className='container  bg-white pt-10 max-md:py-[20px]'>
     <motion.div
-      className='flex items-start   justify-between gap-x-5 gap-y-20 pt-[120px] max-sm:flex-col'
+      className='flex items-start   justify-between gap-x-5 gap-y-20 pt-[120px] max-sm:flex-col '
       exit={{ opacity: 0, filter: 'blur(5px)' }} // Exit animation
       initial={{ opacity: 0, filter: 'blur(5px)' }} // Initial state
       transition={{ duration: 0.5 }} // Duration for the whole transition
@@ -45,14 +24,14 @@ const AboutSection = () => (
       whileInView={{ opacity: 1, filter: 'blur(0px)' }} // Animate to this state
     >
       <div>
-        <h1 className='mb-5 text-3xl font-bold text-gray-200'>
-          About US<span className='text-primary'>.</span>
+        <h1 className='mb-5 text-[40px] font-bold text-gray-200'>
+          About US.
         </h1>
         <ul className='flex flex-wrap items-center justify-start gap-2'>
           {SERVICES.map((service, i) => (
             <motion.li
               key={i}
-              className='rounded-full border-2 border-primary bg-blue-300 px-8 py-3 text-primary'
+              className='rounded-full border-2 border-primary bg-blue-300 px-8 py-3 capitalize text-primary max-sm:px-6'
               initial={{ opacity: 0, y: -10 }} // Initial state for child
               transition={{ delay: i * 0.2, duration: 0.3 }} // Staggered delay
               viewport={{ once: true }}
@@ -64,7 +43,7 @@ const AboutSection = () => (
         </ul>
       </div>
       <div className='max-w-[600px]'>
-        <h1 className='mb-5 text-3xl font-bold text-gray-200'>
+        <h1 className='mb-5 text-[40px] font-bold text-gray-200'>
           Proray Solutions<span className='text-primary'>.</span>
         </h1>
         <p className='text-balance text-lg text-gray-100'>

@@ -28,11 +28,10 @@ const Header: React.FC = () => {
   const menuRef = useRef<HTMLUListElement>(null);
   const pathname = usePathname();
   const [windowScreen, setWindowScreen] = useState<number>(0);
-  const [active, setActive] = useState<string>('home');
+
   const [opened, setOpened] = useState<boolean>(false);
 
-  const handleActiveLink = (title: string) => {
-    setActive(title);
+  const handleActiveLink = () => {
     setOpened(!opened);
   };
 
@@ -136,26 +135,23 @@ const Header: React.FC = () => {
         <div className='overflow-hidden '>
           <ul
             ref={menuRef}
-            className={`right-0  top-0 z-50 flex gap-10 rounded-t-3xl max-md:fixed max-md:h-screen max-md:w-full max-md:flex-col max-md:bg-white max-md:pl-10 max-md:pt-24 max-md:text-xl max-md:transition-transform max-md:duration-500 md:relative md:flex-row ${
+            className={`right-0  top-0 z-50 flex gap-5 rounded-t-3xl max-md:fixed max-md:h-screen max-md:w-full max-md:flex-col max-md:bg-white max-md:pl-10 max-md:pt-24 max-md:text-xl max-md:transition-transform max-md:duration-500 md:relative md:flex-row ${
               opened
                 ? 'max-md:translate-y-28'
                 : 'max-md:translate-y-[200vh]'
             }`}
           >
             {NAVLINKS.map(({ address, title }, i) => (
-              <Link
-                key={i}
-                href={address}
-                onClick={() => setActive(title)}
-              >
+              <Link key={i} href={address}>
                 <motion.li
                   className='w-fit p-4  capitalize  transition-all '
                   style={{
-                    color: active === title ? '#0E90C2' : '#89939E',
+                    color:
+                      pathname === address ? '#0E90C2' : '#89939E',
                   }}
                   transition={{ ease: 'easeInOut', duration: 0.5 }}
                   whileTap={{ scale: 0.9 }}
-                  onClick={() => handleActiveLink(title)}
+                  onClick={() => handleActiveLink()}
                 >
                   <AnimatedLink letters={title} />
                 </motion.li>
@@ -207,9 +203,9 @@ const Header: React.FC = () => {
           />
         </Link>
 
-        {/* Animated Hamburger Menu Button */}
+        {/* Hamburger Menu Button */}
         <motion.button
-          className='menu-button right-5 top-2 z-50  flex size-10 flex-col items-center justify-center rounded-sm   bg-blue-300 max-md:fixed md:hidden'
+          className={` menu-button right-5 top-2 z-50  flex size-10 flex-col items-center justify-center rounded-sm    max-md:fixed md:hidden ${pathname === '/' ? ' bg-[#033D74]' : 'bg-blue-300'}`}
           initial={{ translateY: -20, opacity: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
           type='button'

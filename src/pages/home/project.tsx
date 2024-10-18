@@ -32,9 +32,9 @@ const ProjectSection = () => {
 
   return (
     <section className='pt-[120px] max-sm:pt-[48px]'>
-      <div className='container grid grid-cols-2 items-start justify-center gap-[48px] max-sm:grid-cols-1 max-sm:gap-6'>
+      <div className='container grid grid-cols-2 items-start justify-center gap-[48px] max-sm:grid-cols-1 max-sm:gap-3'>
         <motion.h1
-          className='text-3xl font-bold text-gray-200'
+          className='text-[40px] font-bold text-gray-200'
           initial='hidden'
           variants={titleVariants}
           viewport={{ once: true }}
@@ -44,7 +44,7 @@ const ProjectSection = () => {
         </motion.h1>
         <div>
           <motion.p
-            className='pb-4 text-xl text-gray-200'
+            className='pb-6 text-xl text-[#012F41] lg:text-2xl'
             initial='hidden'
             variants={textVariants}
             viewport={{ once: true }}
@@ -62,7 +62,7 @@ const ProjectSection = () => {
 
       <section className='container grid grid-cols-2 items-center justify-center gap-10 max-md:grid-cols-1'>
         {/* First Project Row */}
-        <ul className='flex size-full flex-col gap-3 rounded-lg bg-banner-img2 bg-cover bg-center bg-no-repeat p-6 text-gray-200  max-md:order-2 lg:p-10'>
+        <ul className='flex size-full flex-col gap-3 rounded-lg bg-banner-img2 bg-cover bg-center bg-no-repeat p-3 text-gray-200  max-md:order-2 lg:p-10'>
           <motion.li
             custom={0}
             initial='hidden'
@@ -91,7 +91,7 @@ const ProjectSection = () => {
             whileInView='visible'
           >
             <p className='text-gray-100'>Challenges</p>
-            <p>
+            <p className='text-[#222]'>
               Inadequate shielding in the X-ray room, leading to
               radiation leakage and non-compliance with safety
               standards.
@@ -167,7 +167,7 @@ const ProjectSection = () => {
           </motion.div>
         </div>
 
-        <ul className='flex size-full flex-col gap-3 rounded-lg bg-banner-img2 bg-cover bg-center bg-no-repeat p-6 text-gray-200  max-md:order-4 lg:p-10'>
+        <ul className='flex size-full flex-col gap-3 rounded-lg bg-banner-img2 bg-cover bg-center bg-no-repeat p-3 text-gray-200  max-md:order-4 lg:p-10'>
           <motion.li
             custom={0}
             initial='hidden'

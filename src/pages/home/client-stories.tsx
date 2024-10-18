@@ -20,12 +20,12 @@ const ClientStories = () => {
       viewport={{ once: true }}
       whileInView={{ filter: 'blur(0px)', opacity: 1 }} // Animate based on visibility
     >
-      <h1 className='text-balance text-center text-3xl font-bold text-gray-200'>
+      <h1 className='text-balance text-center text-2xl font-bold text-gray-200 lg:text-[40px]'>
         What people say about us
       </h1>
 
       <div className='w-full overflow-x-hidden py-10 md:mt-14 '>
-        <div className='relative mx-auto max-w-5xl'>
+        <div className='relative mx-auto max-w-[1296px]'>
           <Slider {...settings} ref={sliderRef} aria-live='polite'>
             {TESTIMONIALS.map((testimonial) => (
               <div
@@ -45,7 +45,7 @@ const ClientStories = () => {
                   </div>
 
                   <article className='mt-6 text-center md:mt-0'>
-                    <blockquote className='text-xl leading-none text-gray-200 sm:pb-5 sm:text-[30px] lg:text-[32px] '>
+                    <blockquote className='text-xl leading-none text-gray-200 sm:pb-5 sm:text-[24px] lg:text-[32px] '>
                       {testimonial.text}
                     </blockquote>
                     <div className='pt-6'>

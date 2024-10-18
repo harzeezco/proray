@@ -132,11 +132,11 @@ const FourthFeature: React.FC = () => {
               </div>
               <motion.p
                 animate={{
-                  translateY: currentIndex === index ? 0 : 25,
                   opacity: currentIndex === index ? 1 : 0,
+                  translateY: currentIndex === index ? 0 : 25,
                 }}
                 className='mt-2 max-w-[350px] text-left text-lg text-zinc-700'
-                initial={{ translateY: 25, opacity: 0 }}
+                initial={{ opacity: 0, translateY: 25 }}
                 transition={{
                   duration: 0.3,
                   ease: 'easeOut',

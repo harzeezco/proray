@@ -6,34 +6,52 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const ContactSection = () => (
-  <section className='relative   px-8 py-16'>
-    <div className='container '>
+  <section className='relative py-16'>
+    <div className='container'>
       {/* Heading */}
-      <div className='mb-12 text-center'>
-        <h2 className='max-w-[400px] text-start text-4xl font-bold text-gray-200  md:max-w-[500px]  md:text-5xl   lg:max-w-[650px] lg:text-6xl'>
+      <motion.div
+        className='mb-12 text-center'
+        initial={{ opacity: 0, translateY: -20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+      >
+        <h2 className='max-w-[400px] text-start text-4xl font-bold text-gray-200 md:max-w-[500px] md:text-5xl lg:max-w-[650px] lg:text-6xl'>
           Contact our team to find out more
         </h2>
-      </div>
+      </motion.div>
 
       <div className='flex justify-between max-md:flex-col md:items-center'>
-        <div className=' relative'>
+        <motion.div
+          className='relative'
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          viewport={{ once: true }}
+          whileInView={{ opacity: 1 }}
+        >
           {/* Map Image */}
           <Image
             alt='World Map'
-            className='  max-w-[800px] rounded-md'
+            className='max-w-[800px] rounded-md'
             height={500}
             layout='responsive'
             src='/image/Location.webp'
             width={700}
           />
-        </div>
+        </motion.div>
 
         {/* Contact Info */}
-        <div className='flex max-w-[232px] flex-col justify-center '>
+        <motion.div
+          className='flex max-w-[232px] flex-col justify-center'
+          initial={{ opacity: 0, translateY: 20 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          viewport={{ once: true }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+        >
           {/* Support */}
           <div>
             <motion.h3
-              className='mb-1 text-xl  font-bold text-gray-200 lg:text-2xl'
+              className='mb-1 text-xl font-bold text-gray-200 lg:text-2xl'
               initial={{ opacity: 0, translateX: 25 }}
               transition={{ ease: 'easeOut', duration: 0.5 }}
               viewport={{ once: true }}
@@ -42,7 +60,7 @@ const ContactSection = () => (
               Support
             </motion.h3>
             <motion.p
-              className='max-w-[170px] text-gray-100 '
+              className='max-w-[170px] text-gray-100'
               initial={{ opacity: 0, translateX: 25 }}
               transition={{
                 ease: 'easeOut',
@@ -56,7 +74,7 @@ const ContactSection = () => (
             </motion.p>
 
             <Link
-              className='text-gray-200 underline  hover:text-primary'
+              className='text-gray-200 underline hover:text-primary'
               href='mailto:support@proraysolutions.com'
             >
               <motion.p
@@ -77,7 +95,7 @@ const ContactSection = () => (
           {/* Sales */}
           <div>
             <motion.h3
-              className='mb-1 mt-5  text-xl font-bold text-gray-200 lg:text-2xl'
+              className='mb-1 mt-5 text-xl font-bold text-gray-200 lg:text-2xl'
               initial={{ opacity: 0, translateX: 25 }}
               transition={{
                 ease: 'easeOut',
@@ -104,7 +122,7 @@ const ContactSection = () => (
             </motion.p>
             <div className='mt-2 flex items-center'>
               <Link
-                className='text-gray-200 underline  hover:text-primary'
+                className='text-gray-200 underline hover:text-primary'
                 href='mailto:sales@proraysolutions.com'
               >
                 <motion.p
@@ -126,7 +144,7 @@ const ContactSection = () => (
           {/* Phone */}
           <div>
             <motion.h3
-              className='mb-1 mt-5  text-xl font-bold text-gray-200 lg:text-2xl'
+              className='mb-1 mt-5 text-xl font-bold text-gray-200 lg:text-2xl'
               initial={{ opacity: 0, translateX: 25 }}
               transition={{
                 ease: 'easeOut',
@@ -153,7 +171,7 @@ const ContactSection = () => (
             </motion.p>
             <div className='mt-2 flex items-center'>
               <Link
-                className='border-b pb-1 text-gray-200  hover:text-primary'
+                className='border-b pb-1 text-gray-200 hover:text-primary'
                 href='tel:+2348026100080'
               >
                 <AnimatedLink
@@ -163,15 +181,21 @@ const ContactSection = () => (
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className='mt-20  flex items-center justify-between max-md:flex-col max-md:items-start'>
+      <motion.div
+        className='mt-20 flex items-center justify-between max-md:flex-col max-md:items-start'
+        initial={{ opacity: 0, translateY: 20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+      >
         <div>
-          <h3 className='pb-3 text-3xl font-bold text-gray-200 '>
+          <h3 className='pb-3 text-3xl font-bold text-gray-200'>
             50+
           </h3>
-          <p className='max-w-[300px] text-lg text-gray-100 max-md:mb-5 '>
+          <p className='max-w-[300px] text-lg text-gray-100 max-md:mb-5'>
             Some big hospitals that we work with, and trust us very
             much
           </p>
@@ -184,10 +208,16 @@ const ContactSection = () => (
             width={700}
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* Contacts Tab */}
-      <div className='mb-20 mt-[120px]  grid items-center lg:mb-40 lg:grid-cols-2 lg:justify-between'>
+      <motion.div
+        className='mb-20 mt-[120px] grid items-center lg:mb-40 lg:grid-cols-2 lg:justify-between'
+        initial={{ opacity: 0, translateY: 20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+      >
         <div className='h-full border-y border-l border-zinc-300 px-16 pb-16 pt-20 max-lg:border max-[500px]:px-5'>
           <h3 className='max-w-[500px] text-3xl font-bold text-gray-200 max-sm:text-2xl'>
             Let’s Level Up Your Healthcare Solutions
@@ -204,16 +234,16 @@ const ContactSection = () => (
 
           {/* form */}
           <form action=''>
-            <div className='mt-5 grid grid-cols-2  items-center  justify-between gap-4 max-sm:grid-cols-1 '>
-              <div className='flex flex-col items-start justify-start '>
+            <div className='mt-5 grid grid-cols-2 items-center justify-between gap-4 max-sm:grid-cols-1'>
+              <div className='flex flex-col items-start justify-start'>
                 <label
                   className='pb-2 font-bold text-gray-200 lg:text-lg'
-                  htmlFor='first-name '
+                  htmlFor='first-name'
                 >
                   First name
                 </label>
                 <input
-                  className='w-full rounded-md border border-zinc-300  p-2 text-gray-200 outline-none'
+                  className='w-full rounded-md border border-zinc-300 p-2 text-gray-200 outline-none'
                   id='first-name'
                   placeholder='First name'
                   type='text'
@@ -222,14 +252,14 @@ const ContactSection = () => (
               <div className='flex flex-col items-start justify-start'>
                 <label
                   className='pb-2 font-bold text-gray-200 lg:text-lg'
-                  htmlFor='first-name '
+                  htmlFor='last-name'
                 >
                   Last name
                 </label>
                 <input
-                  className='w-full rounded-md border border-zinc-300  p-2 text-gray-200 outline-none'
-                  id='first-name'
-                  placeholder='First name'
+                  className='w-full rounded-md border border-zinc-300 p-2 text-gray-200 outline-none'
+                  id='last-name'
+                  placeholder='Last name'
                   type='text'
                 />
               </div>
@@ -242,14 +272,14 @@ const ContactSection = () => (
                 Email
               </label>
               <input
-                className=' rounded-md border border-zinc-300 p-2 text-gray-200 outline-none '
+                className='rounded-md border border-zinc-300 p-2 text-gray-200 outline-none'
                 id='email'
                 name='email'
                 placeholder='you@company.com'
                 type='email'
               />
             </div>
-            <div className='mt-5 flex  flex-col'>
+            <div className='mt-5 flex flex-col'>
               <label
                 className='pb-2 font-bold text-gray-200 lg:text-lg'
                 htmlFor='message'
@@ -257,7 +287,7 @@ const ContactSection = () => (
                 Message
               </label>
               <textarea
-                className=' rounded-md border border-zinc-300  p-2 text-gray-200 outline-none '
+                className='rounded-md border border-zinc-300 p-2 text-gray-200 outline-none'
                 id='message'
                 name='message'
                 placeholder='Leave us a message...'
@@ -265,16 +295,16 @@ const ContactSection = () => (
             </div>
           </form>
         </div>
-        <div className=' h-full max-lg:hidden'>
+        <div className='h-full max-lg:hidden'>
           <Image
-            alt='medical worker  '
+            alt='medical worker'
             className='size-full bg-contain'
             height={200}
             src='/image/proray.webp'
             width={400}
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   </section>
 );

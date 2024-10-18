@@ -9,7 +9,7 @@ import { FaArrowRight } from 'react-icons/fa6';
 const Hero = () => (
   <section className='bg-blue-200 pt-[70px] '>
     <div className='container'>
-      <div className='container'>
+      <div>
         {/* Guaranty Text */}
         <motion.div
           className='mb-1 max-w-fit rounded-lg bg-[#3d5f81] px-8 py-1 text-white'
@@ -22,7 +22,7 @@ const Hero = () => (
         </motion.div>
 
         {/* Main Section with Title and Description */}
-        <div className='flex items-center justify-between gap-x-5 pb-[100px] max-[773px]:flex-col max-[773px]:items-start max-sm:items-start max-sm:gap-5'>
+        <div className='flex items-center justify-between gap-x-5 pb-[50px] max-[773px]:flex-col  max-[773px]:items-start max-sm:items-start max-sm:gap-5 md:h-[55vh]  lg:pb-[124px]'>
           {/* Title with Animation */}
           <motion.h1
             className='inline font-satoshi text-4xl text-white md:max-w-[600px] md:text-5xl lg:max-w-[700px] lg:text-6xl'
@@ -64,14 +64,14 @@ const Hero = () => (
 
     <motion.div
       animate={{ translateY: 0, opacity: 1 }}
-      className='relative mt-20 flex h-[50vh] w-full items-center justify-center bg-white max-[500px]:h-[30vh] md:h-[80vh] lg:h-[90vh]'
+      className='relative mt-20 flex h-[50vh] w-full items-center justify-center bg-white   max-sm:bg-blue-200 max-[500px]:h-[20vh] md:h-[70vh] lg:h-[70vh]'
       initial={{ translateY: 20, opacity: 0 }}
       transition={{ duration: 0.3, delay: 1 }}
     >
-      <div className='absolute top-0 mx-auto -translate-y-[20%]   max-md:container   '>
+      <div className='absolute top-0 mx-auto -translate-y-[20%] max-md:-translate-y-[10%]    max-md:translate-x-5 '>
         <Image
           alt='medical tool'
-          className=' relative  rounded-lg border-4 border-white'
+          className=' relative rounded-lg border-4 border-white max-md:rounded-l-xl'
           height={1000}
           src='/image/banner-image.png'
           width={1000}

@@ -1,7 +1,10 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const Services = () => (
-  <section className='container mt-24'>
+  <section className='container mt-24 lg:mb-[120px]'>
     <div className='flex flex-col items-center'>
       <button
         className='flex gap-3 rounded-[46px] border
@@ -16,7 +19,7 @@ const Services = () => (
         />
         Our Value
       </button>
-      <h1 className='mx-auto mt-5 text-center font-satoshi  text-3xl font-medium text-dark-600 md:max-w-[600px] md:text-4xl lg:max-w-[900px] lg:text-5xl'>
+      <h1 className='mx-auto mt-5 text-center font-satoshi text-3xl font-medium text-dark-600 md:max-w-[600px] md:text-4xl lg:max-w-[900px] lg:text-5xl'>
         Empowering Healthcare Professionals—All in One Place
       </h1>
       <p className='mx-auto mt-3 max-w-[750px] text-center text-gray-250'>
@@ -24,13 +27,18 @@ const Services = () => (
         equipment. Our mission is to empower healthcare professionals
         by offering solutions that enhance patient care and streamline
         healthcare operations. Everything we do is guided by our core
-        values
+        values.
       </p>
     </div>
     <div className='mt-5 grid max-w-6xl grid-cols-12 gap-6 p-6 text-gray-150 max-[831px]:grid-cols-1'>
-      <article
+      {/* Service 1 */}
+      <motion.article
         aria-labelledby='hr-training'
-        className='space-y-5 rounded-lg bg-blue-400 p-5  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        className='space-y-5 rounded-lg bg-blue-400 p-5 max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        initial={{ opacity: 0, translateY: 20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, translateY: 0 }}
       >
         <Image
           alt='Human Resources icon'
@@ -52,12 +60,16 @@ const Services = () => (
             and succeed over the long term.
           </p>
         </div>
-      </article>
+      </motion.article>
 
       {/* Service 2 */}
-      <article
+      <motion.article
         aria-labelledby='project-management'
-        className='space-y-5  rounded-lg bg-blue-400 p-5  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        className='space-y-5 rounded-lg bg-blue-400 p-5 max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        initial={{ opacity: 0, translateY: 20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, translateY: 0 }}
       >
         <Image
           alt='Project Management icon'
@@ -79,12 +91,16 @@ const Services = () => (
             real impact.
           </p>
         </div>
-      </article>
+      </motion.article>
 
       {/* Service 3 */}
-      <article
+      <motion.article
         aria-labelledby='clinical-governance'
-        className='space-y-5 rounded-lg bg-blue-400 p-5  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        className='space-y-5 rounded-lg bg-blue-400 p-5 max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-4 min-[831px]:justify-center'
+        initial={{ opacity: 0, translateY: 20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.6 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, translateY: 0 }}
       >
         <Image
           alt='Clinical Governance icon'
@@ -106,13 +122,16 @@ const Services = () => (
             patient care with every solution.
           </p>
         </div>
-      </article>
+      </motion.article>
 
       {/* Service 4 */}
-      <article
+      <motion.article
         aria-labelledby='equipment-servicing'
-        className='space-y-5 rounded-lg bg-blue-400 p-5  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6
-          min-[831px]:justify-center'
+        className='space-y-5 rounded-lg bg-blue-400 p-5 max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6 min-[831px]:justify-center'
+        initial={{ opacity: 0, translateY: 20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.8 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, translateY: 0 }}
       >
         <Image
           alt='Equipment Servicing icon'
@@ -133,14 +152,19 @@ const Services = () => (
             specific challenges and requirements of each facility.
           </p>
         </div>
-      </article>
+      </motion.article>
 
-      <article
-        aria-labelledby='project-management'
-        className='space-y-5 rounded-lg bg-blue-400 p-5  max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6 min-[831px]:justify-center'
+      {/* Service 5 */}
+      <motion.article
+        aria-labelledby='integrity'
+        className='space-y-5 rounded-lg bg-blue-400 p-5 max-sm:gap-2 max-sm:p-4 min-[831px]:col-span-6 min-[831px]:justify-center'
+        initial={{ opacity: 0, translateY: 20 }}
+        transition={{ duration: 0.5, ease: 'easeInOut', delay: 1 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, translateY: 0 }}
       >
         <Image
-          alt='Project Management icon'
+          alt='Integrity icon'
           height={30}
           src='/icon/security.svg'
           width={30}
@@ -148,7 +172,7 @@ const Services = () => (
         <div className='space-y-3'>
           <h2
             className='text-xl font-semibold text-gray-200'
-            id='project-management'
+            id='integrity'
           >
             Integrity in Every Step
           </h2>
@@ -158,7 +182,7 @@ const Services = () => (
             the quality and reliability of everything we offer.
           </p>
         </div>
-      </article>
+      </motion.article>
     </div>
   </section>
 );

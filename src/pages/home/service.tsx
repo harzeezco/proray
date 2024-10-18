@@ -9,7 +9,7 @@ const ServiceSection = () => (
     className='container pt-[120px] max-sm:pt-[48px]'
   >
     <h1
-      className='mb-5 text-center text-3xl font-bold text-gray-200'
+      className='mb-5 text-center text-[40px] font-bold text-gray-200'
       id='services-heading'
     >
       Our Key Services
@@ -42,7 +42,7 @@ const ServiceSection = () => (
             We offer comprehensive recruitment and training solutions
             across Nigeria, including:
           </p>
-          <ul className='list-disc text-sm text-gray-100'>
+          <ul className='list-disc pl-5 text-sm text-[#677182] '>
             <li>Full recruitment outsourcing services</li>
             <li>
               Develop recruitment strategies for local and
@@ -83,7 +83,7 @@ const ServiceSection = () => (
           <p className='font-bold text-primary'>
             Our project management consultancy services include:
           </p>
-          <ul className='list-disc text-sm text-gray-100'>
+          <ul className='list-disc pl-5 text-sm text-[#677182]'>
             <li>Project structuring and prioritization</li>
             <li>Project mapping and detailed documentation</li>
             <li>Project costing and reporting</li>
@@ -117,7 +117,7 @@ const ServiceSection = () => (
           <p className='font-bold text-primary'>
             We support high-quality patient care with:
           </p>
-          <ul className='list-disc text-sm text-gray-100'>
+          <ul className='list-disc pl-5 text-sm text-[#677182]'>
             <li>Detailed clinical governance frameworks</li>
             <li>
               Implementation of infection prevention control standards
@@ -153,7 +153,7 @@ const ServiceSection = () => (
             We offer tailored maintenance and support for your
             equipment:
           </p>
-          <ul className='list-disc text-sm text-gray-100'>
+          <ul className='list-disc pl-5 text-sm text-[#677182]'>
             <li>Customized maintenance plans</li>
             <li>
               First-level support with expert biomedical engineers
