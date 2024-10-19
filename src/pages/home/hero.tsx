@@ -7,8 +7,8 @@ import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa6';
 
 const Hero = () => (
-  <section className='bg-blue-200 pt-[70px] '>
-    <div className='container'>
+  <section className='bg-blue-200 pt-[70px]  '>
+    <div className='container '>
       <div>
         {/* Guaranty Text */}
         <motion.div
@@ -64,7 +64,7 @@ const Hero = () => (
 
     <motion.div
       animate={{ translateY: 0, opacity: 1 }}
-      className='relative mt-20 flex h-[50vh] w-full items-center justify-center bg-white   max-sm:bg-blue-200 max-[500px]:h-[20vh] md:h-[70vh] lg:h-[70vh]'
+      className='relative mt-20 flex h-[50vh]   items-center justify-center overflow-x-clip overflow-y-visible bg-white   max-sm:bg-blue-200 max-[500px]:h-[20vh] md:h-[70vh] lg:h-[70vh]'
       initial={{ translateY: 20, opacity: 0 }}
       transition={{ duration: 0.3, delay: 1 }}
     >

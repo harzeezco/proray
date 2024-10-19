@@ -204,7 +204,7 @@ const ContactSection = () => (
           <Image
             alt='google amazon airbnb logos'
             height={200}
-            src='/image/logos.png'
+            src='/image/logo.png'
             width={700}
           />
         </div>
@@ -218,7 +218,7 @@ const ContactSection = () => (
         viewport={{ once: true }}
         whileInView={{ opacity: 1, translateY: 0 }}
       >
-        <div className='h-full border-y border-l border-zinc-300 px-16 pb-16 pt-20 max-lg:border max-[500px]:px-5'>
+        <div className='h-full border-y border-l border-zinc-300 px-12 py-14  max-lg:border max-[500px]:border-none max-[500px]:px-1'>
           <h3 className='max-w-[500px] text-3xl font-bold text-gray-200 max-sm:text-2xl'>
             Let’s Level Up Your Healthcare Solutions
           </h3>
@@ -234,7 +234,7 @@ const ContactSection = () => (
 
           {/* form */}
           <form action=''>
-            <div className='mt-5 grid grid-cols-2 items-center justify-between gap-4 max-sm:grid-cols-1'>
+            <div className='mt-5 grid grid-cols-2 items-center justify-between gap-4 max-sm:grid-cols-1 '>
               <div className='flex flex-col items-start justify-start'>
                 <label
                   className='pb-2 font-bold text-gray-200 lg:text-lg'
@@ -293,6 +293,12 @@ const ContactSection = () => (
                 placeholder='Leave us a message...'
               />
             </div>
+            <button
+              className='my-8 rounded-lg bg-primary px-8 py-3'
+              type='button'
+            >
+              Get Started
+            </button>
           </form>
         </div>
         <div className='h-full max-lg:hidden'>

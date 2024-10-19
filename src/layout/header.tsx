@@ -28,7 +28,7 @@ const Header: React.FC = () => {
   const menuRef = useRef<HTMLUListElement>(null);
   const pathname = usePathname();
   const [windowScreen, setWindowScreen] = useState<number>(0);
-
+  const [clicked, setClicked] = useState(false);
   const [opened, setOpened] = useState<boolean>(false);
 
   const handleActiveLink = () => {
@@ -53,14 +53,15 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  // large screen check
+  // Checking window Resize
 
   useEffect(() => {
     // Run this effect only on the client side
     if (typeof globalThis !== 'undefined') {
-      setWindowScreen(window.innerWidth); // Set window width when client-side
+      setWindowScreen(window.innerWidth);
+      console.log(windowScreen);
     }
-  }, []);
+  }, [windowScreen]);
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
@@ -70,7 +71,7 @@ const Header: React.FC = () => {
     };
   }, []);
   // large screen check
-  const isLarge = windowScreen <= 968;
+  const isLarge = windowScreen <= 770;
 
   function handleWindowResize() {
     if (typeof globalThis !== 'undefined') {
@@ -90,18 +91,20 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  // const isLarge = windowScreen <= 968;
+  // handle overlay function
 
-  // function handleWindowResize() {
-  //   setWindowScreen(window.innerWidth);
-  // }
-  // useEffect(() => {
-  //   document.addEventListener('resize', handleWindowResize);
+  const handleShowOverlay = () => {
+    setClicked(true);
 
-  //   return () => {
-  //     document.removeEventListener('resize', handleWindowResize);
-  //   };
-  // }, []);
+    // Reset the clicked state after 2 seconds
+    setTimeout(() => {
+      setClicked(false);
+    }, 700); // Adjust the duration as needed
+  };
+
+  useEffect(() => {
+    console.log(clicked); // This will log the updated value whenever it changes
+  }, [clicked]); // Dependency array
 
   return (
     <header
@@ -142,7 +145,11 @@ const Header: React.FC = () => {
             }`}
           >
             {NAVLINKS.map(({ address, title }, i) => (
-              <Link key={i} href={address}>
+              <Link
+                key={i}
+                href={address}
+                onClick={handleShowOverlay}
+              >
                 <motion.li
                   className='w-fit p-4  capitalize  transition-all '
                   style={{
@@ -188,7 +195,7 @@ const Header: React.FC = () => {
             <button
               className='mr-10  mt-24 flex items-center justify-center rounded-full bg-primary p-3 text-white md:hidden'
               type='button'
-              onClick={() => setOpened(!opened)}
+              onClick={handleShowOverlay}
             >
               <p>Close</p>
             </button>
@@ -231,6 +238,37 @@ const Header: React.FC = () => {
         initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
       />
+
+      <motion.div
+        animate={{
+          height: clicked ? '100%' : 0,
+        }}
+        className='fixed inset-0 z-[98999999] flex size-full items-center justify-center overflow-hidden bg-blue-200'
+      >
+        <motion.div
+          initial={{ filter: 'blur(5px)', translateY: 20 }}
+          transition={{
+            duration: 0.2,
+            ease: 'easeInOut',
+            delay: 0.5,
+          }}
+          whileInView={{ filter: 'blur(0px)', translateY: 0 }}
+        >
+          {' '}
+          <motion.img
+            alt='logo'
+            animate={{ filter: 'blur(0px)', translateY: 0 }}
+            height={24}
+            initial={{ filter: 'blur(5px)', translateY: 20 }}
+            src='/icon/logo.png'
+            transition={{
+              duration: 0.05,
+              ease: 'easeInOut',
+            }}
+            width={126}
+          />
+        </motion.div>
+      </motion.div>
     </header>
   );
 };

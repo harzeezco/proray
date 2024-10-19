@@ -15,13 +15,13 @@ body {
   font-family: 'satoshi';
   color: white;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 img {
   display: block;
 }
 html {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .showcase {
@@ -79,4 +79,10 @@ html {
   filter: blur(5px); /* Adjust the blur intensity as needed */
   opacity: 0.5; /* Reduce opacity */
   transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+@layer utilities {
+  .paused {
+    animation-play-state: paused;
+  }
 }

@@ -1,11 +1,6 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  // content: [
-  //   "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-  //   "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-  //   "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  // ],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -59,6 +54,16 @@ const config: Config = {
       backgroundImage: {
         'banner-img': "url('/image/banner-image2.png')",
         'banner-img2': "url('/image/detail.png')",
+      },
+
+      animation: {
+        'loop-scroll': 'loop-scroll 20s linear infinite',
+      },
+      keyframes: {
+        'loop-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
       },
     },
   },
