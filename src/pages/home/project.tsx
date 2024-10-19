@@ -141,7 +141,7 @@ const ProjectSection = () => {
               alt='medical machine'
               className='size-full h-full object-cover'
               height={400}
-              src='/image/image1.png
+              src='/icon/image1.png
               '
               width={1000}
             />
