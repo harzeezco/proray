@@ -32,7 +32,7 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        primary: '#0E90C2',
+        primary: '#0e90c2',
         blue: {
           100: '#D9D9D9',
           200: '#012e58',
@@ -58,11 +58,16 @@ const config: Config = {
 
       animation: {
         'loop-scroll': 'loop-scroll 20s linear infinite',
+        loader: 'loader 10s linear infinite',
       },
       keyframes: {
         'loop-scroll': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-100%)' },
+        },
+        loader: {
+          from: { width: '0%' },
+          to: { width: '100%' },
         },
       },
     },

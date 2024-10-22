@@ -74,7 +74,7 @@ const Footer = () => {
               {MENU_ITEMS.map((item) => (
                 <li
                   key={item}
-                  className='transition-all duration-300 ease-in-out hover:text-white'
+                  className='py-2 transition-all duration-300 ease-in-out hover:text-white'
                 >
                   <Link href={routes[item]}>
                     <AnimatedLink letters={item} />

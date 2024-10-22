@@ -1,6 +1,7 @@
 'use client';
 
 import AnimatedLink from '@/components/animated-text';
+import { TransitionLink } from '@/components/layout';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -30,6 +31,16 @@ const Header: React.FC = () => {
   const [windowScreen, setWindowScreen] = useState<number>(0);
   const [clicked, setClicked] = useState(false);
   const [opened, setOpened] = useState<boolean>(false);
+  const [isLoading, setIsLoaing] = useState(true);
+
+  // handling window first loading
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoaing(false);
+    }, 2000);
+  }, []);
+
+  // handling active links
 
   const handleActiveLink = () => {
     setOpened(!opened);
@@ -103,7 +114,7 @@ const Header: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log(clicked); // This will log the updated value whenever it changes
+    console.log(clicked);
   }, [clicked]); // Dependency array
 
   return (
@@ -111,28 +122,30 @@ const Header: React.FC = () => {
       className={` relative w-full ${pathname === '/' ? 'bg-blue-200' : 'bg-white'}`}
     >
       <div className='container relative z-[9999] flex items-center justify-between py-4'>
-        <motion.div
-          initial={{ translateY: -20, opacity: 0 }}
-          transition={{ duration: 0.3, delay: 0.3 }}
-          viewport={{ once: true }}
-          whileInView={{ translateY: 0, opacity: 1 }}
-        >
-          {pathname === '/' ? (
-            <Image
-              alt='logo'
-              height={24}
-              src='/icon/logo.png'
-              width={126}
-            />
-          ) : (
-            <Image
-              alt='logo'
-              height={24}
-              src='/icon/logo2.webp'
-              width={126}
-            />
-          )}
-        </motion.div>
+        <Link href='/'>
+          <motion.div
+            initial={{ translateY: -20, opacity: 0 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            viewport={{ once: true }}
+            whileInView={{ translateY: 0, opacity: 1 }}
+          >
+            {pathname === '/' ? (
+              <Image
+                alt='logo'
+                height={24}
+                src='/icon/logo.png'
+                width={126}
+              />
+            ) : (
+              <Image
+                alt='logo'
+                height={24}
+                src='/icon/logo2.webp'
+                width={126}
+              />
+            )}
+          </motion.div>
+        </Link>
 
         {/* Menu (for larger screens, displayed as flex) */}
         <div className='overflow-hidden '>
@@ -145,11 +158,7 @@ const Header: React.FC = () => {
             }`}
           >
             {NAVLINKS.map(({ address, title }, i) => (
-              <Link
-                key={i}
-                href={address}
-                onClick={handleShowOverlay}
-              >
+              <TransitionLink key={i} href={address}>
                 <motion.li
                   className='w-fit p-4  capitalize  transition-all '
                   style={{
@@ -162,7 +171,7 @@ const Header: React.FC = () => {
                 >
                   <AnimatedLink letters={title} />
                 </motion.li>
-              </Link>
+              </TransitionLink>
             ))}
 
             <div className='mt-5 flex gap-2 md:hidden'>
@@ -241,16 +250,19 @@ const Header: React.FC = () => {
 
       <motion.div
         animate={{
-          height: clicked ? '100%' : 0,
+          height: isLoading ? '100%' : 0,
+          scale: isLoading ? 1 : 0.8,
         }}
-        className='fixed inset-0 z-[98999999] flex size-full items-center justify-center overflow-hidden bg-blue-200'
+        className='fixed inset-0 z-[98999999] flex size-full items-center justify-center overflow-hidden  bg-blue-200'
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
       >
         <motion.div
+          className='flex flex-col items-center gap-4'
           initial={{ filter: 'blur(5px)', translateY: 20 }}
           transition={{
             duration: 0.2,
             ease: 'easeInOut',
-            delay: 0.5,
+            delay: 0.2,
           }}
           whileInView={{ filter: 'blur(0px)', translateY: 0 }}
         >
@@ -258,7 +270,7 @@ const Header: React.FC = () => {
           <motion.img
             alt='logo'
             animate={{ filter: 'blur(0px)', translateY: 0 }}
-            height={24}
+            height={26}
             initial={{ filter: 'blur(5px)', translateY: 20 }}
             src='/icon/logo.png'
             transition={{
@@ -267,6 +279,9 @@ const Header: React.FC = () => {
             }}
             width={126}
           />
+          <div className='relative  h-1 w-20 overflow-hidden rounded-full  bg-white'>
+            <div className='absolute left-0 top-0 h-full w-2 animate-loader bg-blue-500' />
+          </div>
         </motion.div>
       </motion.div>
     </header>
