@@ -204,7 +204,7 @@ const Header: React.FC = () => {
             <button
               className='mr-10  mt-24 flex items-center justify-center rounded-full bg-primary p-3 text-white md:hidden'
               type='button'
-              onClick={handleShowOverlay}
+              onClick={() => setOpened(false)}
             >
               <p>Close</p>
             </button>
