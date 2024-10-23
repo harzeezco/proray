@@ -141,8 +141,7 @@ const ProjectSection = () => {
               alt='medical machine'
               className='size-full h-full object-cover'
               height={400}
-              src='/icon/image1.png
-              '
+              src='/xray-image.svg'
               width={1000}
             />
           </motion.div>

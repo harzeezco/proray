@@ -99,7 +99,7 @@ const Hero = () => (
               alt='medical accessories'
               className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
               height={588}
-              src='/image/xray-image.svg'
+              src='/image/products.webp'
               width={900}
             />
           </div>
