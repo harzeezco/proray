@@ -61,14 +61,27 @@ const Hero = () => (
       >
         <Button className='mt-10 ' href='/contact'>
           <AnimatedLink letters='Book a Call Now' />
-          <FaArrowRight className='ml-2 inline-block size-5 -rotate-45 transition-transform duration-300 ease-in-out group-hover:rotate-0' />
+          <FaArrowRight
+            className='ml-2 inline-block size-5
+          -rotate-45 transition-transform duration-300
+          ease-in-out group-hover:rotate-0'
+          />
         </Button>
       </motion.div>
     </div>
 
-    <div className=' flex h-[90vh] items-center justify-center max-2xl:mt-20 max-2xl:items-end max-sm:mt-0 max-sm:h-[70vh] 2xl:h-[70vh]'>
-      <motion.div className='relative w-full  bg-blue-200 max-2xl:h-[50vh] max-sm:h-[35vh] 2xl:mt-[150px] 2xl:h-[30vh] '>
-        <div className='absolute -top-60 flex items-center  justify-center gap-x-5 max-2xl:animate-loop-scroll   '>
+    <div
+      className=' flex h-[90vh] items-center
+    justify-center max-2xl:mt-20 max-2xl:items-end max-sm:mt-0 max-sm:h-[70vh] 2xl:h-[70vh]'
+    >
+      <motion.div
+        className='relative w-full  bg-blue-200
+       max-2xl:h-[50vh] max-sm:h-[35vh] 2xl:mt-[150px] 2xl:h-[30vh] '
+      >
+        <div
+          className='absolute -top-60 flex items-center
+        justify-center gap-x-5 max-2xl:animate-loop-scroll   '
+        >
           {/* max-2xl:translate-y-60  */}
           <div className='shrink-0'>
             <Image
@@ -86,7 +99,7 @@ const Hero = () => (
               alt='medical accessories'
               className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
               height={588}
-              src='/image/products.webp'
+              src='/image/xray-image.svg'
               width={900}
             />
           </div>
