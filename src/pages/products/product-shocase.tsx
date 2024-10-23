@@ -6,7 +6,7 @@ import Features from './features';
 import MobileProduct from './mobile-product';
 
 const ProductShocase = () => (
-  <section className='mb-[120px] '>
+  <section className=' mx-auto max-w-[1000px]'>
     <Features />
     <SecondFeatures />
     <ThirdFeature />

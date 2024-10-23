@@ -225,42 +225,23 @@ const SecondFeatures: React.FC = () => {
           {/* Caption Section with scrollable area */}
           <div
             ref={captionsRef}
-            className='custom-scrollbar relative flex h-40 snap-y snap-mandatory flex-col overflow-y-scroll text-gray-200'
+            className='custom-scrollbar relative flex h-[220px] snap-y snap-mandatory flex-col items-center justify-evenly overflow-y-scroll text-gray-200'
           >
             {images.map((item, index) => (
               <div
                 key={index}
-                className={`mt-5 h-40 flex-none snap-start pr-3 transition-opacity duration-300 ${
+                className={` h-40 flex-none snap-start pr-3 transition-opacity duration-300 ${
                   manualIndex === index ? 'opacity-100' : 'opacity-30'
                 }`}
               >
                 <div className='size-fit overflow-hidden'>
-                  <motion.h1
-                    animate={{
-                      translateY: manualIndex === index ? 0 : 25,
-                    }}
-                    className='text-xl font-bold leading-[0.9] text-gray-200'
-                    initial={{ translateY: 25 }}
-                    transition={{ duration: 0.3, ease: 'easeOut' }}
-                  >
-                    {images[windowIndex].title}
-                  </motion.h1>
+                  <h1 className='mb-2 text-xl font-bold leading-[0.9] text-gray-200'>
+                    {item.title}
+                  </h1>
                 </div>
-                <motion.p
-                  animate={{
-                    translateY: manualIndex === index ? 0 : 25,
-                    opacity: manualIndex === index ? 1 : 0,
-                  }}
-                  className='mt-2 max-w-[350px] text-left text-lg text-zinc-700'
-                  initial={{ translateY: 25, opacity: 0 }}
-                  transition={{
-                    duration: 0.3,
-                    ease: 'easeOut',
-                    delay: 0.2,
-                  }}
-                >
+                <p className=' max-w-[350px] text-left text-lg text-zinc-700 '>
                   {item.caption}
-                </motion.p>
+                </p>
               </div>
             ))}
           </div>

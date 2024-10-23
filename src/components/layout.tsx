@@ -10,7 +10,8 @@ interface LayoutProps extends LinkProps {
 }
 
 // Sleep function defined to return Promise<void>
-const sleep = (ms: number): Promise<void> => new Promise((resolve) => {
+const sleep = (ms: number): Promise<void> =>
+  new Promise((resolve) => {
     setTimeout(() => resolve(), ms);
   });
 

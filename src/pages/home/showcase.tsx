@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion';
 
 const ShowcaseSection = () => (
-  <section className='mt-20 w-full bg-banner-img bg-cover bg-center bg-no-repeat'>
-    <div className='showcase py-20 lg:pt-40'>
+  <section className='mt-20 flex min-h-screen w-full items-center justify-center bg-banner-img bg-cover bg-center bg-no-repeat py-20'>
+    <div className='showcase container h-fit py-20   lg:px-5 '>
       <div className='container'>
         <motion.h1
-          className='mx-auto max-w-[900px] pt-10 text-center text-4xl md:text-5xl lg:text-6xl'
+          className='mx-auto max-w-[900px]  text-center text-4xl md:text-5xl lg:text-6xl'
           initial={{ opacity: 0, y: -20 }} // Start with hidden opacity and slightly upward position
           transition={{ duration: 0.5 }} // Animation duration
           viewport={{ once: true }} // Only animate once when in view

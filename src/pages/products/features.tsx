@@ -198,7 +198,7 @@ const Features: React.FC = () => {
         <h1 className='mb-10 max-w-[400px] text-3xl font-bold text-blue-200 max-sm:mb-5 md:max-w-[500px] md:text-4xl lg:max-w-[600px] lg:text-5xl'>
           Radiation protective equipment
         </h1>
-        <div className='flex items-center justify-between gap-x-5'>
+        <div className='flex items-center justify-between gap-x-5 max-sm:gap-x-2'>
           {/* Image Section */}
           {images.length > 0 && (
             <div className='h-full'>
@@ -225,42 +225,23 @@ const Features: React.FC = () => {
           {/* Caption Section */}
           <div
             ref={captionsRef}
-            className='custom-scrollbar relative flex h-40 snap-y snap-mandatory flex-col overflow-y-scroll text-gray-200'
+            className='custom-scrollbar relative flex h-[220px] snap-y snap-mandatory flex-col items-center justify-evenly overflow-y-scroll text-gray-200'
           >
             {images.map((item, index) => (
               <div
                 key={index}
-                className={`mt-5 h-40 flex-none snap-start pr-3 transition-opacity duration-300 ${
+                className={` h-40 flex-none  snap-start pr-3 transition-opacity duration-300 max-sm:h-44 ${
                   manualIndex === index ? 'opacity-100' : 'opacity-30'
                 }`}
               >
-                <div className='size-fit overflow-hidden'>
-                  <motion.h1
-                    animate={{
-                      translateY: manualIndex === index ? 0 : 25,
-                    }}
-                    className='text-xl font-bold leading-[0.9] text-gray-200'
-                    initial={{ translateY: 25 }}
-                    transition={{ duration: 0.3, ease: 'easeOut' }}
-                  >
-                    {images[windowIndex].title}
-                  </motion.h1>
+                <div className='size-fit overflow-hidden '>
+                  <h1 className='mb-2 text-xl font-bold leading-[0.9] text-gray-200'>
+                    {item.title}
+                  </h1>
                 </div>
-                <motion.p
-                  animate={{
-                    translateY: manualIndex === index ? 0 : 25,
-                    opacity: manualIndex === index ? 1 : 0,
-                  }}
-                  className='mt-2 max-w-[350px] text-left text-lg text-zinc-700'
-                  initial={{ translateY: 25, opacity: 0 }}
-                  transition={{
-                    duration: 0.3,
-                    ease: 'easeOut',
-                    delay: 0.2,
-                  }}
-                >
+                <p className=' max-w-[350px] text-left text-lg text-zinc-700 '>
                   {item.caption}
-                </motion.p>
+                </p>
               </div>
             ))}
           </div>

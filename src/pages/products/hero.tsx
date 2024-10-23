@@ -29,7 +29,7 @@ const Hero = () => (
       </motion.h1>
 
       <motion.ul
-        className='mx-auto mt-7 flex max-w-[900px] flex-wrap justify-center gap-2'
+        className='mx-auto mt-7 flex max-w-[700px] flex-wrap justify-center gap-2'
         initial={{ opacity: 0 }} // Initial state for the list
         transition={{
           ease: 'easeInOut',
@@ -59,69 +59,72 @@ const Hero = () => (
         viewport={{ once: true }} // Animate only once when in view
         whileInView={{ opacity: 1, translateY: 0 }} // Animate to this state
       >
-        <Button className='mt-10' href='/contact'>
+        <Button className='mt-10 ' href='/contact'>
           <AnimatedLink letters='Book a Call Now' />
           <FaArrowRight className='ml-2 inline-block size-5 -rotate-45 transition-transform duration-300 ease-in-out group-hover:rotate-0' />
         </Button>
       </motion.div>
     </div>
 
-    <motion.div className='relative mt-[250px] h-[45vh] w-full bg-blue-200 max-sm:h-[40vh] lg:mt-[320px]   '>
-      <div className='flex items-center justify-center gap-x-5  max-2xl:animate-loop-scroll max-xl:absolute max-xl:-top-60 max-xl:translate-y-60   '>
-        <div className='shrink-0'>
-          <Image
-            alt='medical accessories'
-            className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
-            height={588}
-            src='/image/products.webp'
-            width={1200}
-          />
-        </div>
+    <div className=' flex h-[90vh] items-center justify-center max-2xl:mt-20 max-2xl:items-end max-sm:mt-0 max-sm:h-[70vh] 2xl:h-[70vh]'>
+      <motion.div className='relative w-full  bg-blue-200 max-2xl:h-[50vh] max-sm:h-[35vh] 2xl:mt-[150px] 2xl:h-[30vh] '>
+        <div className='absolute -top-60 flex items-center  justify-center gap-x-5 max-2xl:animate-loop-scroll   '>
+          {/* max-2xl:translate-y-60  */}
+          <div className='shrink-0'>
+            <Image
+              alt='medical accessories'
+              className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
+              height={588}
+              src='/image/products.webp'
+              width={1200}
+            />
+          </div>
 
-        {/* Second image */}
-        <div className='shrink-0'>
-          <Image
-            alt='medical accessories'
-            className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
-            height={588}
-            src='/image/products.webp'
-            width={900}
-          />
-        </div>
+          {/* Second image */}
+          <div className='shrink-0'>
+            <Image
+              alt='medical accessories'
+              className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
+              height={588}
+              src='/image/products.webp'
+              width={900}
+            />
+          </div>
 
-        {/* Third image */}
-        <div className='shrink-0'>
-          <Image
-            alt='medical accessories'
-            className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
-            height={588}
-            src='/image/products.webp'
-            width={900}
-          />
-        </div>
+          {/* Third image */}
+          <div className='shrink-0'>
+            <Image
+              alt='medical accessories'
+              className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
+              height={588}
+              src='/image/products.webp'
+              width={900}
+            />
+          </div>
 
-        {/* Additional images for smoother looping */}
-        <div className='shrink-0'>
-          <Image
-            alt='medical accessories'
-            className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
-            height={588}
-            src='/image/products.webp'
-            width={900}
-          />
-        </div>
+          {/* Additional images for smoother looping */}
+          <div className='shrink-0'>
+            <Image
+              alt='medical accessories'
+              className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
+              height={588}
+              src='/image/products.webp'
+              width={900}
+            />
+          </div>
 
-        <div className='shrink-0'>
-          <Image
-            alt='medical accessories'
-            className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
-            height={588}
-            src='/image/products.webp'
-            width={900}
-          />
+          <div className='shrink-0'>
+            <Image
+              alt='medical accessories'
+              className='mx-auto shrink-0 rounded-xl bg-cover bg-center'
+              height={588}
+              src='/image/products.webp'
+              width={900}
+            />
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   </section>
 );
 
