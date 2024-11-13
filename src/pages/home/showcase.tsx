@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 
 const ShowcaseSection = () => (
   <section className='mt-20 flex min-h-screen w-full items-center justify-center bg-banner-img bg-cover bg-center bg-no-repeat py-20'>
-    <div className='showcase container h-fit py-20   lg:px-5 '>
-      <div className='container'>
+    <div className='showcase container  h-fit border-slate-400 py-10 lg:px-3 xl:border '>
+      <div className='container '>
         <motion.h1
           className='mx-auto max-w-[900px]  text-center text-4xl md:text-5xl lg:text-6xl'
           initial={{ opacity: 0, y: -20 }} // Start with hidden opacity and slightly upward position

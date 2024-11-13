@@ -25,6 +25,23 @@ const config: Config = {
         '2xl': '1536px',
       },
     },
+    container2: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '0rem',
+        lg: '0rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+      screens: {
+        sm: '840px',
+        md: '968px',
+        lg: '968px',
+        xl: '968px',
+        '2xl': '968px',
+      },
+    },
     extend: {
       fontFamily: {
         satoshi: ['Satoshi', 'sans-serif'],

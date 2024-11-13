@@ -27,7 +27,6 @@ html {
 
 .showcase {
   border-radius: 12px;
-  border: 5px solid rgba(255, 255, 255, 0);
   background: rgba(7, 89, 120, 0.21);
   backdrop-filter: blur(2.9000000953674316px);
 }
