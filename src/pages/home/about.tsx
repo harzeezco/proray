@@ -63,7 +63,7 @@ const AboutSection = () => (
           Africa.
         </p>
 
-        <Button className='mt-10' href='/contact'>
+        <Button className='mt-10' href='/about'>
           <AnimatedLink letters='Learn More About Us' />
           <FaArrowRight className='ml-2 inline-block size-5 -rotate-45 transition-transform duration-300 ease-in-out group-hover:rotate-0' />
         </Button>

@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import ContactForm from './contact-form';
+
 const ContactSection = () => (
   <section className='relative py-16'>
     <div className='container'>
@@ -87,7 +89,9 @@ const ContactSection = () => (
                 viewport={{ once: true }}
                 whileInView={{ opacity: 1, translateX: 0 }}
               >
-                support@proraysolutions.com
+                <Link href='mailto:info@proraysolutionsltd.com'>
+                  info@proraysolutionsltd.com
+                </Link>
               </motion.p>
             </Link>
           </div>
@@ -135,7 +139,9 @@ const ContactSection = () => (
                   viewport={{ once: true }}
                   whileInView={{ opacity: 1, translateX: 0 }}
                 >
-                  sales@proraysolutions.com
+                  <Link href='mailto:info@proraysolutionsltd.com'>
+                    info@proraysolutionsltd.com
+                  </Link>
                 </motion.p>
               </Link>
             </div>
@@ -172,11 +178,11 @@ const ContactSection = () => (
             <div className='mt-2 flex items-center'>
               <Link
                 className='border-b pb-1 text-gray-200 hover:text-primary'
-                href='tel:+2348026100080'
+                href='tel:+2348039565299,'
               >
                 <AnimatedLink
                   className='underline'
-                  letters='+234 (080) 2 610 0080'
+                  letters='+234 (080) 3 956 5299'
                 />
               </Link>
             </div>
@@ -228,78 +234,12 @@ const ContactSection = () => (
               className='text-primary hover:underline'
               href='mailto:hello@proraysolutions.com'
             >
-              hello@proraysolutions.com
+              info@proraysolutionsltd.com
             </a>
           </p>
 
           {/* form */}
-          <form action=''>
-            <div className='mt-5 grid grid-cols-2 items-center justify-between gap-4 max-sm:grid-cols-1 '>
-              <div className='flex flex-col items-start justify-start'>
-                <label
-                  className='pb-2 font-bold text-gray-200 lg:text-lg'
-                  htmlFor='first-name'
-                >
-                  First name
-                </label>
-                <input
-                  className='w-full rounded-md border border-zinc-300 p-2 text-gray-200 outline-none'
-                  id='first-name'
-                  placeholder='First name'
-                  type='text'
-                />
-              </div>
-              <div className='flex flex-col items-start justify-start'>
-                <label
-                  className='pb-2 font-bold text-gray-200 lg:text-lg'
-                  htmlFor='last-name'
-                >
-                  Last name
-                </label>
-                <input
-                  className='w-full rounded-md border border-zinc-300 p-2 text-gray-200 outline-none'
-                  id='last-name'
-                  placeholder='Last name'
-                  type='text'
-                />
-              </div>
-            </div>
-            <div className='mt-5 flex flex-col'>
-              <label
-                className='pb-2 font-bold text-gray-200 lg:text-lg'
-                htmlFor='email'
-              >
-                Email
-              </label>
-              <input
-                className='rounded-md border border-zinc-300 p-2 text-gray-200 outline-none'
-                id='email'
-                name='email'
-                placeholder='you@company.com'
-                type='email'
-              />
-            </div>
-            <div className='mt-5 flex flex-col'>
-              <label
-                className='pb-2 font-bold text-gray-200 lg:text-lg'
-                htmlFor='message'
-              >
-                Message
-              </label>
-              <textarea
-                className='rounded-md border border-zinc-300 p-2 text-gray-200 outline-none'
-                id='message'
-                name='message'
-                placeholder='Leave us a message...'
-              />
-            </div>
-            <button
-              className='my-8 rounded-lg bg-primary px-8 py-3'
-              type='button'
-            >
-              Get Started
-            </button>
-          </form>
+          <ContactForm />
         </div>
         <div className='h-full max-lg:hidden'>
           <Image
