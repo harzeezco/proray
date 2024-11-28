@@ -184,7 +184,7 @@ const ContactSection = () => (
         </motion.div>
       </div>
 
-      <motion.div
+      {/* <motion.div
         className='mt-20 flex items-center justify-between max-md:flex-col max-md:items-start'
         initial={{ opacity: 0, translateY: 20 }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
@@ -208,7 +208,7 @@ const ContactSection = () => (
             width={700}
           />
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Contacts Tab */}
       <motion.div
