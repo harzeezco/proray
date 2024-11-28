@@ -66,9 +66,9 @@ const Footer = () => {
               </p>
             </div>
             <div className='text-zinc-500 max-sm:hidden'>
-              <p>65b Opebi Road, Salvation Bus-stop</p>
-              <p>Ikeja, Lagos. Nigeria.</p>
-              <p>0802 610 0080,</p>
+              <p>42, Airport Road, Ikeja</p>
+              <p>Lagos. Nigeria.</p>
+              <p>0803 956 5299,</p>
             </div>
             <ul className='flex items-center justify-center gap-4 text-zinc-500 max-md:items-start max-sm:mt-5 max-sm:justify-start max-sm:text-sm max-[390px]:flex-col'>
               {MENU_ITEMS.map((item) => (
