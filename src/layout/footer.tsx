@@ -53,12 +53,11 @@ const Footer = () => {
             <div className='flex flex-col items-start justify-start gap-2 text-sm text-zinc-500 sm:hidden'>
               <p className='flex items-start justify-start gap-2'>
                 <FaLocationPin className='size-6 text-white' />
-                65b Opebi Road, Salvation Bus-stop, Ikeja, Lagos.
-                Nigeria.
+                42, Airport Road, Ikeja Lagos. Nigeria.
               </p>
               <p className='flex items-start justify-start gap-2'>
                 <FaPhoneSquare className='size-6 text-white' />
-                0802 610 0080,
+                0803 956 5299,
               </p>
               <p className='flex items-start justify-start gap-2'>
                 <FaTwitterSquare className='size-6 text-white' />
