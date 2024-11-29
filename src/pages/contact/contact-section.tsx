@@ -178,7 +178,7 @@ const ContactSection = () => (
             <div className='mt-2 flex items-center'>
               <Link
                 className='border-b pb-1 text-gray-200 hover:text-primary'
-                href='https://wa.me/08039565299'
+                href='https://wa.me/2348039565299'
               >
                 <AnimatedLink
                   className='underline'
