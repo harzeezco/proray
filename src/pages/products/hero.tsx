@@ -7,12 +7,12 @@ import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa6';
 
 const SERVICES_LISTS = [
-  { name: 'Radiation', bottom: 20 },
-  { name: 'Shielding', bottom: 30 },
-  { name: 'X-Ray', bottom: 40 },
-  { name: 'Diagnostics', bottom: 50 },
-  { name: 'Consumables', bottom: 60 },
-  { name: 'Medicals', bottom: 70 },
+  { name: 'Radiation', bottom: 10 },
+  { name: 'Shielding', bottom: 20 },
+  { name: 'X-Ray', bottom: 30 },
+  { name: 'Diagnostics', bottom: 40 },
+  { name: 'Consumables', bottom: 50 },
+  { name: 'Medicals', bottom: 60 },
 ];
 
 const scrollHandler = (service: { bottom: number }) => {
@@ -89,7 +89,7 @@ const Hero = () => (
     <div className='flex h-[90vh] items-center justify-center max-2xl:mt-20 max-2xl:items-end max-sm:mt-0 max-sm:h-[70vh] 2xl:h-[70vh]'>
       <motion.div className='relative w-full bg-blue-200 max-2xl:h-[50vh] max-sm:h-[35vh] 2xl:mt-[150px] 2xl:h-[30vh]'>
         <div className='absolute -top-60 flex items-center justify-center gap-x-5 max-2xl:animate-loop-scroll'>
-          {[...Array.from({length: 5})].map((_, index) => (
+          {[...Array.from({ length: 5 })].map((_, index) => (
             <div key={index} className='shrink-0'>
               <Image
                 alt='medical accessories'
