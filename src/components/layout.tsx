@@ -30,9 +30,9 @@ export const TransitionLink: React.FC<LayoutProps> = ({
     const body = document.querySelector('body');
 
     body?.classList.add('page-transition');
-    await sleep(500); // Wait for 500 ms before navigating
+    await sleep(300); // Wait for 500 ms before navigating
     await router.push(href); // Navigate to the new route
-    await sleep(500); // Wait for 500 ms after navigating
+    await sleep(300); // Wait for 500 ms after navigating
     body?.classList.remove('page-transition'); // Remove the transition class
   };
 

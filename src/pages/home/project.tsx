@@ -83,7 +83,7 @@ const ProjectSection = () => {
             <p className='text-gray-100'>Client</p>
             <p>IOM Ikeja, Lagos</p>
           </motion.li>
-          <motion.li
+          {/* <motion.li
             custom={2}
             initial='hidden'
             variants={listItemVariants}
@@ -96,7 +96,7 @@ const ProjectSection = () => {
               radiation leakage and non-compliance with safety
               standards.
             </p>
-          </motion.li>
+          </motion.li> */}
           <motion.li
             custom={3}
             initial='hidden'
@@ -189,7 +189,7 @@ const ProjectSection = () => {
             <p className='text-gray-100'>Client</p>
             <p>ABC Foundation, Ibadan</p>
           </motion.li>
-          <motion.li
+          {/* <motion.li
             custom={2}
             initial='hidden'
             variants={listItemVariants}
@@ -202,7 +202,7 @@ const ProjectSection = () => {
               compromising safety and not meeting the necessary
               compliance standards for a CT room.
             </p>
-          </motion.li>
+          </motion.li> */}
           <motion.li
             custom={3}
             initial='hidden'
