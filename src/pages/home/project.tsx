@@ -112,21 +112,21 @@ const ProjectSection = () => {
               regulations.
             </p>
           </motion.li>
-          <motion.li
+<!--           <motion.li
             custom={4}
             initial='hidden'
             variants={listItemVariants}
             viewport={{ once: true }}
             whileInView='visible'
           >
-            {/* <p className='text-gray-100'>Impact</p>
-            <p>
+            <p className='text-gray-100'>Impact</p>
+      <p>
               Achieved a 70% reduction in radiation exposure,
               improving safety for both staff and patients, and
               enhancing the facility&apos;s compliance with
               international standards.
-            </p> */}
-          </motion.li>
+            </p>
+          </motion.li> -->
         </ul>
 
         <div className='size-full max-md:order-1'>
