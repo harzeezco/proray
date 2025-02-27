@@ -175,7 +175,7 @@ const ContactSection = () => (
             >
               Mon-Fri from 8am to 5pm.
             </motion.p>
-            <div className='mt-2 flex items-center'>
+            <div className='mt-2 flex w-fit flex-col gap-y-2 '>
               <Link
                 className='border-b pb-1 text-gray-200 hover:text-primary'
                 href='https://wa.me/2348039565299'
@@ -183,6 +183,15 @@ const ContactSection = () => (
                 <AnimatedLink
                   className='underline'
                   letters='+234 (080) 3 956 5299'
+                />
+              </Link>
+              <Link
+                className='border-b pb-1 text-gray-200 hover:text-primary'
+                href='https://wa.me/2348134245743'
+              >
+                <AnimatedLink
+                  className='underline'
+                  letters='+234 (081) 3 424 5743'
                 />
               </Link>
             </div>
