@@ -57,8 +57,9 @@ const Footer = () => {
               </p>
               <p className='flex items-start justify-start gap-2'>
                 <FaPhoneSquare className='size-6 text-white' />
-                0803 956 5299,
+                0803 956 5299, 0813 424 5743
               </p>
+
               <p className='flex items-start justify-start gap-2'>
                 <FaTwitterSquare className='size-6 text-white' />
                 Instagram
@@ -68,6 +69,7 @@ const Footer = () => {
               <p>42, Airport Road, Ikeja</p>
               <p>Lagos. Nigeria.</p>
               <p>0803 956 5299,</p>
+              <p>0813 424 5743</p>
             </div>
             <ul className='flex items-center justify-center gap-4 text-zinc-500 max-md:items-start max-sm:mt-5 max-sm:justify-start max-sm:text-sm max-[390px]:flex-col'>
               {MENU_ITEMS.map((item) => (
